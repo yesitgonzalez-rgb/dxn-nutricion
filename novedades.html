@@ -1,0 +1,185 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Novedades — DXN Nutrición Colombia</title>
+  <meta name="description" content="Descubre los últimos productos DXN: Tea Infuser, Kimono, Oolong Tea, Jugo de Roselle, Zhi Tea y Aceite de Coco. Novedades naturales para tu bienestar." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="assets/css/shared.css" />
+  <style>
+    .nuevo-badge { display:inline-flex; align-items:center; gap:6px; background:linear-gradient(135deg,#C9A227,#E8B84B); color:white; font-size:.72rem; font-weight:800; letter-spacing:.08em; text-transform:uppercase; padding:5px 12px; border-radius:100px; }
+    .nuevo-badge .dot { width:6px; height:6px; background:white; border-radius:50%; animation:pulse 2s infinite; }
+    @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(1.5)}}
+    .novedad-featured { display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:center; background:var(--white); border:1px solid var(--gray-200); border-radius:var(--radius-xl); padding:48px; margin-bottom:48px; transition:var(--transition); }
+    .novedad-featured:hover { box-shadow:var(--shadow-lg); border-color:rgba(30,158,62,.3); }
+    .novedad-featured:nth-child(even) { direction:rtl; }
+    .novedad-featured:nth-child(even) > * { direction:ltr; }
+    .novedad-img { aspect-ratio:1; border-radius:var(--radius-xl); display:flex; align-items:center; justify-content:center; font-size:6rem; }
+    .novedad-body { display:flex; flex-direction:column; gap:16px; }
+    .novedad-body h2 { font-family:'Playfair Display',serif; font-size:1.8rem; font-weight:700; color:var(--gray-900); }
+    .novedad-body p { font-size:.95rem; color:var(--gray-500); line-height:1.8; }
+    .novedad-tags { display:flex; flex-wrap:wrap; gap:8px; }
+    .novedad-tags span { background:rgba(30,158,62,.08); color:var(--green); font-size:.75rem; font-weight:600; padding:5px 14px; border-radius:100px; border:1px solid rgba(30,158,62,.15); }
+    .products-mini-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(240px,1fr)); gap:24px; }
+    .mini-card { background:var(--white); border-radius:var(--radius); border:1px solid var(--gray-200); padding:28px; text-align:center; transition:var(--transition); }
+    .mini-card:hover { transform:translateY(-6px); box-shadow:var(--shadow-lg); border-color:rgba(30,158,62,.3); }
+    .mini-icon { font-size:3.5rem; margin-bottom:16px; }
+    .mini-name { font-size:1rem; font-weight:700; color:var(--gray-900); margin-bottom:8px; }
+    .mini-desc { font-size:.85rem; color:var(--gray-500); line-height:1.6; margin-bottom:16px; }
+    @media(max-width:768px){ .novedad-featured{grid-template-columns:1fr;} .novedad-featured:nth-child(even){direction:ltr;} }
+  </style>
+<link rel="stylesheet" href="assets/css/chat.css" />
+</head>
+<body>
+<div id="mobile-overlay" onclick="closeMobileNav()"></div>
+<nav id="mobile-nav">
+  <div class="mobile-close" onclick="closeMobileNav()"><i class="fa-solid fa-xmark"></i></div>
+  <div class="mobile-nav-links">
+    <a href="nosotros.html"><i class="fa-solid fa-circle-info" style="color:var(--green);margin-right:10px"></i>Nosotros</a>
+    <details><summary><span><i class="fa-solid fa-leaf" style="color:var(--green);margin-right:10px"></i>Productos</span><i class="fa-solid fa-chevron-down" style="font-size:.75rem;color:var(--gray-500)"></i></summary>
+      <div class="mobile-sub"><a href="productos.html#suplementos"><i class="fa-solid fa-pills"></i>Suplementos</a><a href="productos.html#cuidado"><i class="fa-solid fa-hand-sparkles"></i>Cuidado Personal</a><a href="productos.html#belleza"><i class="fa-solid fa-star"></i>Belleza</a><a href="productos.html#bebidas"><i class="fa-solid fa-mug-hot"></i>Alimentos y Bebidas</a><a href="productos.html#combos"><i class="fa-solid fa-box"></i>Combos</a></div>
+    </details>
+    <a href="novedades.html" style="color:var(--green)"><i class="fa-solid fa-sparkles" style="color:var(--green);margin-right:10px"></i>Novedades</a>
+    <a href="cafeterias.html"><i class="fa-solid fa-store" style="color:var(--green);margin-right:10px"></i>Cafeterías</a>
+    <a href="formacion.html"><i class="fa-solid fa-graduation-cap" style="color:var(--green);margin-right:10px"></i>Formación</a>
+    <a href="blog.html"><i class="fa-solid fa-newspaper" style="color:var(--green);margin-right:10px"></i>Blog</a>
+    <a href="contacto.html"><i class="fa-solid fa-envelope" style="color:var(--green);margin-right:10px"></i>Contacto</a>
+  </div>
+  <div class="mobile-cta"><a href="tel:3012705375" class="btn btn-primary"><i class="fa-solid fa-phone"></i>Llamar ahora</a></div>
+</nav>
+
+<header id="navbar">
+  <div class="container">
+    <nav class="nav-inner">
+      <a href="index.html" class="nav-logo"><div class="nav-logo-icon"><svg viewBox="0 0 32 32"><path d="M16 4c-2 0-4 1-5 3-1.5-.5-3-.2-4 1s-.8 3 0 4c-1.5 1-2 3-1 4.5s3 2 4.5 1c.5 2 2.5 3.5 4.5 3.5s4-1.5 4.5-3.5c1.5 1 3.5.5 4.5-1s.5-3.5-1-4.5c.8-1 .8-3 0-4s-2.5-1.5-4-1c-1-2-3-3-5-3z" opacity=".9"/><line x1="16" y1="21" x2="16" y2="28" stroke="white" stroke-width="2.5" stroke-linecap="round"/></svg></div><div class="nav-logo-text"><span class="dxn">DXN</span><span class="nutricion">NUTRICIÓN</span></div></a>
+      <ul class="nav-links">
+        <li><a href="nosotros.html">Nosotros</a></li>
+        <li class="has-dropdown"><a href="productos.html">Productos <i class="fa-solid fa-chevron-down" style="font-size:.65rem"></i></a><div class="dropdown"><a href="productos.html#suplementos"><i class="fa-solid fa-pills"></i>Suplementos Dietarios</a><a href="productos.html#cuidado"><i class="fa-solid fa-hand-sparkles"></i>Cuidado Personal</a><a href="productos.html#belleza"><i class="fa-solid fa-star"></i>Belleza</a><a href="productos.html#bebidas"><i class="fa-solid fa-mug-hot"></i>Alimentos y Bebidas</a><a href="productos.html#combos"><i class="fa-solid fa-box"></i>Combos Ganoderma</a></div></li>
+        <li><a href="novedades.html" style="color:var(--green)">Novedades</a></li>
+        <li><a href="cafeterias.html">Cafeterías</a></li>
+        <li><a href="formacion.html">Formación</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+      <div class="nav-cta"><a href="tel:3012705375" class="phone"><i class="fa-solid fa-phone"></i> 301 270 5375</a><a href="contacto.html" class="btn btn-primary" style="padding:10px 22px;font-size:.875rem">Únete ahora</a></div>
+      <div class="hamburger" onclick="openMobileNav()"><span></span><span></span><span></span></div>
+    </nav>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="page-hero-bg"></div><div class="page-hero-grid"></div>
+  <div class="container">
+    <div class="page-hero-content" data-aos="fade-up">
+      <div class="breadcrumb"><a href="index.html">Inicio</a><i class="fa-solid fa-chevron-right"></i><span>Novedades</span></div>
+      <div class="nuevo-badge"><span class="dot"></span>Nuevos productos</div>
+      <h1 style="margin-top:16px">Lo último de <span>DXN Colombia</span></h1>
+      <p>Descubre las incorporaciones más recientes a nuestra línea de productos naturales. Innovación al servicio de tu bienestar.</p>
+    </div>
+  </div>
+</section>
+
+<section style="padding:80px 0;background:var(--gray-50)">
+  <div class="container">
+
+    <div style="text-align:center;margin-bottom:64px" data-aos="fade-up">
+      <div class="section-tag"><i class="fa-solid fa-sparkles"></i>Recién llegados</div>
+      <h2 class="section-title">Productos <span>destacados</span></h2>
+      <p class="section-sub" style="margin:0 auto">Los últimos lanzamientos de DXN ya están disponibles en Colombia. Sé el primero en probarlos.</p>
+    </div>
+
+    <div data-aos="fade-up">
+      <div class="novedad-featured">
+        <div class="novedad-img" style="background:linear-gradient(135deg,#e8f5e9,#a5d6a7)">🫖</div>
+        <div class="novedad-body">
+          <div class="nuevo-badge"><span class="dot"></span>Nuevo</div>
+          <h2>Tea Infuser DXN</h2>
+          <p>Innovador infusor de té diseñado especialmente para preparar los tés DXN de manera óptima. Material premium libre de BPA, fácil de usar y limpiar. Extrae al máximo los principios activos del Ganoderma y las hierbas naturales.</p>
+          <div class="novedad-tags"><span>Accesorio premium</span><span>Libre de BPA</span><span>Fácil limpieza</span><span>Diseño ergonómico</span></div>
+          <a href="contacto.html" class="btn btn-primary" style="align-self:flex-start"><i class="fa-solid fa-envelope"></i>Consultar disponibilidad</a>
+        </div>
+      </div>
+
+      <div class="novedad-featured">
+        <div class="novedad-img" style="background:linear-gradient(135deg,#e3f2fd,#90caf9)">🥋</div>
+        <div class="novedad-body">
+          <div class="nuevo-badge"><span class="dot"></span>Nuevo</div>
+          <h2>Kimono DXN</h2>
+          <p>Prenda de bienestar inspirada en la filosofía oriental de DXN. Cómodo, versátil y de alta calidad. Perfecto para sesiones de meditación, yoga, o simplemente como ropa de descanso. Representa el estilo de vida DXN.</p>
+          <div class="novedad-tags"><span>Lifestyle DXN</span><span>Alta calidad</span><span>Cómodo</span><span>Bienestar</span></div>
+          <a href="contacto.html" class="btn btn-primary" style="align-self:flex-start"><i class="fa-solid fa-envelope"></i>Consultar disponibilidad</a>
+        </div>
+      </div>
+
+      <div class="novedad-featured">
+        <div class="novedad-img" style="background:linear-gradient(135deg,#f1f8e9,#dcedc8)">🍵</div>
+        <div class="novedad-body">
+          <div class="nuevo-badge"><span class="dot"></span>Nuevo</div>
+          <h2>Oolong Tea Powder DXN</h2>
+          <p>Té Oolong en polvo de la más alta calidad, combinado con extracto de Ganoderma. Propiedades antioxidantes excepcionales, favorece el metabolismo y aporta energía sostenida sin los picos del café. Sabor suave y agradable.</p>
+          <div class="novedad-tags"><span>Antioxidante</span><span>Metabolismo</span><span>Energía</span><span>Sin cafeína excesiva</span></div>
+          <a href="contacto.html" class="btn btn-primary" style="align-self:flex-start"><i class="fa-solid fa-envelope"></i>Consultar disponibilidad</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mini grid de los demás -->
+    <div style="margin-top:64px" data-aos="fade-up">
+      <div style="text-align:center;margin-bottom:40px">
+        <div class="section-tag"><i class="fa-solid fa-plus"></i>También nuevos</div>
+        <h2 class="section-title">Más <span>novedades</span></h2>
+      </div>
+      <div class="products-mini-grid">
+        <div class="mini-card">
+          <div class="mini-icon">🌺</div>
+          <div class="mini-name">Jugo de Roselle DXN</div>
+          <div class="mini-desc">Bebida natural de Jamaica (Hibiscus sabdariffa). Rica en antocianinas, vitamina C y antioxidantes. Apoya la salud cardiovascular y la presión arterial.</div>
+          <a href="contacto.html" class="btn btn-primary" style="width:100%;justify-content:center;padding:12px"><i class="fa-solid fa-envelope"></i>Consultar</a>
+        </div>
+        <div class="mini-card">
+          <div class="mini-icon">🍃</div>
+          <div class="mini-name">Zhi Tea DXN</div>
+          <div class="mini-desc">Mezcla especial de tés con extracto de Ganoderma. Ideal para relajarse, mejorar la digestión y disfrutar de un momento de bienestar.</div>
+          <a href="contacto.html" class="btn btn-primary" style="width:100%;justify-content:center;padding:12px"><i class="fa-solid fa-envelope"></i>Consultar</a>
+        </div>
+        <div class="mini-card">
+          <div class="mini-icon">🥥</div>
+          <div class="mini-name">Aceite de Coco DXN</div>
+          <div class="mini-desc">Aceite de coco virgen extra prensado en frío. Versátil para cocinar, cuidado de piel y cabello. Rico en ácidos grasos de cadena media (MCT).</div>
+          <a href="contacto.html" class="btn btn-primary" style="width:100%;justify-content:center;padding:12px"><i class="fa-solid fa-envelope"></i>Consultar</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA newsletter -->
+    <div style="background:var(--gradient);border-radius:var(--radius-xl);padding:56px;text-align:center;margin-top:64px;position:relative;overflow:hidden" data-aos="fade-up">
+      <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:40px 40px"></div>
+      <div style="position:relative;z-index:2">
+        <div class="nuevo-badge" style="margin:0 auto 20px"><span class="dot"></span>Sé el primero</div>
+        <h2 style="font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;color:white;margin-bottom:12px">¿Quieres conocer los nuevos<br>productos antes que nadie?</h2>
+        <p style="color:rgba(255,255,255,.8);max-width:480px;margin:0 auto 32px;font-size:.95rem">Contáctanos y te mantendremos informado sobre todos los lanzamientos exclusivos de DXN Colombia.</p>
+        <a href="https://wa.me/573012705375" target="_blank" class="btn" style="background:white;color:var(--green-dark);font-weight:700;padding:16px 36px;box-shadow:0 8px 30px rgba(0,0,0,.2)"><i class="fa-brands fa-whatsapp"></i>Escribir por WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand"><a href="index.html" class="nav-logo"><img src="assets/img/logo-dxn.png" alt="DXN Nutrición Colombia" class="nav-logo-img"></a><p>Los productos más nuevos de DXN ya disponibles en Colombia.</p><div class="social-links"><a href="#" class="social-link"><i class="fa-brands fa-facebook-f"></i></a><a href="#" class="social-link"><i class="fa-brands fa-instagram"></i></a><a href="#" class="social-link"><i class="fa-brands fa-youtube"></i></a><a href="https://wa.me/573012705375" target="_blank" class="social-link"><i class="fa-brands fa-whatsapp"></i></a></div></div>
+      <div class="footer-col"><h4>Productos</h4><ul><li><a href="productos.html#suplementos"><i class="fa-solid fa-chevron-right"></i>Suplementos</a></li><li><a href="productos.html#cuidado"><i class="fa-solid fa-chevron-right"></i>Cuidado Personal</a></li><li><a href="productos.html#belleza"><i class="fa-solid fa-chevron-right"></i>Belleza</a></li><li><a href="productos.html#bebidas"><i class="fa-solid fa-chevron-right"></i>Bebidas</a></li><li><a href="novedades.html"><i class="fa-solid fa-chevron-right"></i>Novedades</a></li></ul></div>
+      <div class="footer-col"><h4>Empresa</h4><ul><li><a href="nosotros.html"><i class="fa-solid fa-chevron-right"></i>Nosotros</a></li><li><a href="cafeterias.html"><i class="fa-solid fa-chevron-right"></i>Cafeterías</a></li><li><a href="formacion.html"><i class="fa-solid fa-chevron-right"></i>Formación</a></li><li><a href="blog.html"><i class="fa-solid fa-chevron-right"></i>Blog</a></li><li><a href="contacto.html"><i class="fa-solid fa-chevron-right"></i>Contacto</a></li></ul></div>
+      <div class="footer-col"><h4>Contacto</h4><ul><li><a href="tel:3012705375"><i class="fa-solid fa-phone"></i>301 270 5375</a></li><li><a href="tel:3156916984"><i class="fa-solid fa-phone"></i>315 691 6984</a></li><li><a href="mailto:ventas@dxnnutricion.com.co"><i class="fa-solid fa-envelope"></i>ventas@dxnnutricion.com.co</a></li><li><a href="#"><i class="fa-solid fa-location-dot"></i>Cll 75 #68G-70, Bogotá</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><p>© 2026 DXN Nutrición Colombia. Todos los derechos reservados.</p><p>Distribuidor autorizado <a href="https://www.dxn2u.com" target="_blank">DXN Internacional</a></p></div>
+  </div>
+</footer>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>AOS.init({duration:700,once:true,offset:60});const navbar=document.getElementById('navbar');window.addEventListener('scroll',()=>navbar.classList.toggle('scrolled',window.scrollY>40));function openMobileNav(){document.getElementById('mobile-nav').classList.add('open');document.getElementById('mobile-overlay').classList.add('open');document.body.style.overflow='hidden';}function closeMobileNav(){document.getElementById('mobile-nav').classList.remove('open');document.getElementById('mobile-overlay').classList.remove('open');document.body.style.overflow='';}</script>
+<script src="assets/js/chat.js"></script>
+</body>
+</html>

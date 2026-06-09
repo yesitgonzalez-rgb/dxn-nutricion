@@ -1,0 +1,217 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Formación — DXN Nutrición Colombia</title>
+  <meta name="description" content="Programas de Educación Empresarial y Desarrollo Humano de DXN Colombia. Crece como persona y como emprendedor con nuestros recursos de formación." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="assets/css/shared.css" />
+  <style>
+    .module-card { background:var(--white); border:1px solid var(--gray-200); border-radius:var(--radius); padding:28px; transition:var(--transition); }
+    .module-card:hover { border-color:var(--green); box-shadow:var(--shadow-md); transform:translateY(-4px); }
+    .module-num { font-family:'Playfair Display',serif; font-size:2.5rem; font-weight:700; background:var(--gradient); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; line-height:1; margin-bottom:12px; }
+    .module-title { font-size:1rem; font-weight:700; color:var(--gray-900); margin-bottom:8px; }
+    .module-desc { font-size:.875rem; color:var(--gray-500); line-height:1.7; }
+    .pillar-hero { border-radius:var(--radius-xl); padding:56px; color:white; position:relative; overflow:hidden; }
+    .pillar-hero-bg { position:absolute; inset:0; opacity:.08; }
+    .pillar-hero-content { position:relative; z-index:2; }
+    .pillar-hero h2 { font-family:'Playfair Display',serif; font-size:2.2rem; font-weight:700; margin-bottom:12px; }
+    .pillar-hero p { color:rgba(255,255,255,.8); line-height:1.8; font-size:.95rem; margin-bottom:28px; max-width:520px; }
+    .resource-card { display:flex; align-items:center; gap:20px; background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.15); border-radius:var(--radius); padding:18px 22px; margin-bottom:12px; transition:var(--transition); }
+    .resource-card:hover { background:rgba(255,255,255,.18); }
+    .resource-icon { width:44px; height:44px; background:rgba(255,255,255,.15); border-radius:10px; display:flex; align-items:center; justify-content:center; flex-shrink:0; font-size:1.1rem; }
+    .resource-title { font-size:.95rem; font-weight:700; color:white; }
+    .resource-sub { font-size:.8rem; color:rgba(255,255,255,.65); margin-top:2px; }
+    .audio-card { background:var(--gray-900); border-radius:var(--radius-xl); padding:40px; border:1px solid rgba(255,255,255,.08); }
+    .audio-player { background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.1); border-radius:var(--radius); padding:24px; margin-top:20px; }
+    .audio-title { font-size:1rem; font-weight:700; color:white; margin-bottom:4px; }
+    .audio-author { font-size:.82rem; color:rgba(255,255,255,.5); margin-bottom:16px; }
+    .audio-controls { display:flex; align-items:center; gap:16px; }
+    .play-btn { width:48px; height:48px; background:var(--gradient); border-radius:50%; display:flex; align-items:center; justify-content:center; color:white; font-size:1rem; cursor:pointer; border:none; transition:var(--transition); flex-shrink:0; }
+    .play-btn:hover { transform:scale(1.1); }
+    .progress-bar { flex:1; height:4px; background:rgba(255,255,255,.15); border-radius:2px; cursor:pointer; }
+    .progress-fill { height:100%; width:30%; background:var(--gradient); border-radius:2px; }
+    .audio-time { font-size:.78rem; color:rgba(255,255,255,.5); white-space:nowrap; }
+    @media(max-width:768px){ .pillar-hero{padding:32px;} }
+  </style>
+<link rel="stylesheet" href="assets/css/chat.css" />
+</head>
+<body>
+<div id="mobile-overlay" onclick="closeMobileNav()"></div>
+<nav id="mobile-nav">
+  <div class="mobile-close" onclick="closeMobileNav()"><i class="fa-solid fa-xmark"></i></div>
+  <div class="mobile-nav-links">
+    <a href="nosotros.html"><i class="fa-solid fa-circle-info" style="color:var(--green);margin-right:10px"></i>Nosotros</a>
+    <details><summary><span><i class="fa-solid fa-leaf" style="color:var(--green);margin-right:10px"></i>Productos</span><i class="fa-solid fa-chevron-down" style="font-size:.75rem;color:var(--gray-500)"></i></summary><div class="mobile-sub"><a href="productos.html#suplementos"><i class="fa-solid fa-pills"></i>Suplementos</a><a href="productos.html#cuidado"><i class="fa-solid fa-hand-sparkles"></i>Cuidado Personal</a><a href="productos.html#belleza"><i class="fa-solid fa-star"></i>Belleza</a><a href="productos.html#bebidas"><i class="fa-solid fa-mug-hot"></i>Bebidas</a><a href="productos.html#combos"><i class="fa-solid fa-box"></i>Combos</a></div></details>
+    <a href="novedades.html"><i class="fa-solid fa-sparkles" style="color:var(--green);margin-right:10px"></i>Novedades</a>
+    <a href="cafeterias.html"><i class="fa-solid fa-store" style="color:var(--green);margin-right:10px"></i>Cafeterías</a>
+    <a href="formacion.html" style="color:var(--green)"><i class="fa-solid fa-graduation-cap" style="color:var(--green);margin-right:10px"></i>Formación</a>
+    <a href="blog.html"><i class="fa-solid fa-newspaper" style="color:var(--green);margin-right:10px"></i>Blog</a>
+    <a href="contacto.html"><i class="fa-solid fa-envelope" style="color:var(--green);margin-right:10px"></i>Contacto</a>
+  </div>
+  <div class="mobile-cta"><a href="tel:3012705375" class="btn btn-primary"><i class="fa-solid fa-phone"></i>Llamar ahora</a></div>
+</nav>
+
+<header id="navbar">
+  <div class="container">
+    <nav class="nav-inner">
+      <a href="index.html" class="nav-logo"><div class="nav-logo-icon"><svg viewBox="0 0 32 32"><path d="M16 4c-2 0-4 1-5 3-1.5-.5-3-.2-4 1s-.8 3 0 4c-1.5 1-2 3-1 4.5s3 2 4.5 1c.5 2 2.5 3.5 4.5 3.5s4-1.5 4.5-3.5c1.5 1 3.5.5 4.5-1s.5-3.5-1-4.5c.8-1 .8-3 0-4s-2.5-1.5-4-1c-1-2-3-3-5-3z" opacity=".9"/><line x1="16" y1="21" x2="16" y2="28" stroke="white" stroke-width="2.5" stroke-linecap="round"/></svg></div><div class="nav-logo-text"><span class="dxn">DXN</span><span class="nutricion">NUTRICIÓN</span></div></a>
+      <ul class="nav-links">
+        <li><a href="nosotros.html">Nosotros</a></li>
+        <li class="has-dropdown"><a href="productos.html">Productos <i class="fa-solid fa-chevron-down" style="font-size:.65rem"></i></a><div class="dropdown"><a href="productos.html#suplementos"><i class="fa-solid fa-pills"></i>Suplementos Dietarios</a><a href="productos.html#cuidado"><i class="fa-solid fa-hand-sparkles"></i>Cuidado Personal</a><a href="productos.html#belleza"><i class="fa-solid fa-star"></i>Belleza</a><a href="productos.html#bebidas"><i class="fa-solid fa-mug-hot"></i>Alimentos y Bebidas</a><a href="productos.html#combos"><i class="fa-solid fa-box"></i>Combos Ganoderma</a></div></li>
+        <li><a href="novedades.html">Novedades</a></li>
+        <li><a href="cafeterias.html">Cafeterías</a></li>
+        <li><a href="formacion.html" style="color:var(--green)">Formación</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+      <div class="nav-cta"><a href="tel:3012705375" class="phone"><i class="fa-solid fa-phone"></i> 301 270 5375</a><a href="contacto.html" class="btn btn-primary" style="padding:10px 22px;font-size:.875rem">Únete ahora</a></div>
+      <div class="hamburger" onclick="openMobileNav()"><span></span><span></span><span></span></div>
+    </nav>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="page-hero-bg"></div><div class="page-hero-grid"></div>
+  <div class="container">
+    <div class="page-hero-content" data-aos="fade-up">
+      <div class="breadcrumb"><a href="index.html">Inicio</a><i class="fa-solid fa-chevron-right"></i><span>Formación</span></div>
+      <div class="section-tag" style="background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.2);color:rgba(255,255,255,.85)"><i class="fa-solid fa-graduation-cap"></i>Crece con DXN</div>
+      <h1>Formación para <span>potenciar tu éxito</span></h1>
+      <p>Dos pilares de conocimiento diseñados para que alcances tus metas personales y profesionales. Aprende de líderes con experiencia real.</p>
+    </div>
+  </div>
+</section>
+
+<!-- INTRO -->
+<section style="padding:80px 0;background:var(--white)">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:32px" data-aos="fade-up">
+      <!-- EMPRESARIAL -->
+      <div id="empresarial">
+        <div class="pillar-hero" style="background:linear-gradient(135deg,var(--blue),var(--blue-light))">
+          <div class="pillar-hero-bg"><i class="fa-solid fa-briefcase" style="font-size:12rem;color:white"></i></div>
+          <div class="pillar-hero-content">
+            <div style="width:60px;height:60px;background:rgba(255,255,255,.15);border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin-bottom:20px"><i class="fa-solid fa-chart-line"></i></div>
+            <h2>Educación Empresarial</h2>
+            <p>Desarrolla las habilidades y estrategias que necesitas para construir, escalar y sostener tu negocio DXN. Aprende de líderes que ya lograron la libertad financiera.</p>
+            <div class="resource-card"><div class="resource-icon"><i class="fa-solid fa-play"></i></div><div><div class="resource-title">Ventas y prospección efectiva</div><div class="resource-sub">Módulo 1 · 45 minutos</div></div></div>
+            <div class="resource-card"><div class="resource-icon"><i class="fa-solid fa-play"></i></div><div><div class="resource-title">Construcción de equipos de alto rendimiento</div><div class="resource-sub">Módulo 2 · 60 minutos</div></div></div>
+            <div class="resource-card"><div class="resource-icon"><i class="fa-solid fa-play"></i></div><div><div class="resource-title">Marketing digital para distribuidores DXN</div><div class="resource-sub">Módulo 3 · 50 minutos</div></div></div>
+            <div class="resource-card"><div class="resource-icon"><i class="fa-solid fa-play"></i></div><div><div class="resource-title">Gestión financiera personal y del negocio</div><div class="resource-sub">Módulo 4 · 40 minutos</div></div></div>
+            <a href="contacto.html?tipo=formacion-empresarial" class="btn" style="background:rgba(255,255,255,.2);color:white;border:2px solid rgba(255,255,255,.4);margin-top:8px"><i class="fa-solid fa-arrow-right"></i>Acceder a los módulos</a>
+          </div>
+        </div>
+      </div>
+      <!-- HUMANO -->
+      <div id="humano">
+        <div class="pillar-hero" style="background:linear-gradient(135deg,var(--green-dark),var(--green))">
+          <div class="pillar-hero-bg"><i class="fa-solid fa-person" style="font-size:12rem;color:white"></i></div>
+          <div class="pillar-hero-content">
+            <div style="width:60px;height:60px;background:rgba(255,255,255,.15);border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin-bottom:20px"><i class="fa-solid fa-brain"></i></div>
+            <h2>Desarrollo Humano</h2>
+            <p>El crecimiento personal es la base de todo éxito sostenible. Fortalece tu mentalidad, liderazgo e inteligencia emocional para convertirte en la mejor versión de ti mismo.</p>
+            <div class="resource-card"><div class="resource-icon"><i class="fa-solid fa-play"></i></div><div><div class="resource-title">Liderazgo transformacional</div><div class="resource-sub">Módulo 1 · 55 minutos</div></div></div>
+            <div class="resource-card"><div class="resource-icon"><i class="fa-solid fa-play"></i></div><div><div class="resource-title">Inteligencia emocional avanzada</div><div class="resource-sub">Módulo 2 · 50 minutos</div></div></div>
+            <div class="resource-card"><div class="resource-icon"><i class="fa-solid fa-play"></i></div><div><div class="resource-title">Mentalidad de abundancia y prosperidad</div><div class="resource-sub">Módulo 3 · 45 minutos</div></div></div>
+            <div class="resource-card"><div class="resource-icon"><i class="fa-solid fa-play"></i></div><div><div class="resource-title">Comunicación asertiva y persuasiva</div><div class="resource-sub">Módulo 4 · 40 minutos</div></div></div>
+            <a href="contacto.html?tipo=formacion-humano" class="btn" style="background:rgba(255,255,255,.2);color:white;border:2px solid rgba(255,255,255,.4);margin-top:8px"><i class="fa-solid fa-arrow-right"></i>Acceder a los módulos</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AUDIO LIBROS -->
+<section style="padding:100px 0;background:var(--gray-50)">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:64px" data-aos="fade-up">
+      <div class="section-tag"><i class="fa-solid fa-headphones"></i>Recursos gratuitos</div>
+      <h2 class="section-title">Audio Libros <span>DXN Nutrición</span></h2>
+      <p class="section-sub" style="margin:0 auto">Contenido de desarrollo personal cuidadosamente seleccionado para acompañar tu camino de crecimiento.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:28px">
+      <div class="audio-card" data-aos="fade-right">
+        <div style="display:flex;align-items:center;gap:14px;margin-bottom:24px">
+          <div style="width:56px;height:56px;background:var(--gradient);border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0"><i class="fa-solid fa-book-open" style="color:white"></i></div>
+          <div><div style="font-size:.75rem;font-weight:700;color:var(--green-light);letter-spacing:.1em;text-transform:uppercase">Audio Libro</div><div style="font-size:1.1rem;font-weight:700;color:white;margin-top:2px">Secretos Revelados</div><div style="font-size:.82rem;color:rgba(255,255,255,.5);margin-top:2px">Laín García</div></div>
+        </div>
+        <div class="audio-player">
+          <div class="audio-title">Capítulo 2: El Sabio de Corazón</div>
+          <div class="audio-author">Laín García · Publicado Oct 6, 2022</div>
+          <div class="audio-controls"><button class="play-btn"><i class="fa-solid fa-play"></i></button><div class="progress-bar"><div class="progress-fill"></div></div><span class="audio-time">12:34</span></div>
+        </div>
+        <p style="font-size:.875rem;color:rgba(255,255,255,.65);line-height:1.8;margin-top:20px">"El corazón se refiere a la mente, a esos pensamientos y emociones, pero también a la morada del alma, que nos guía a través de la inteligencia infinita."</p>
+      </div>
+      <div class="audio-card" data-aos="fade-left">
+        <div style="display:flex;align-items:center;gap:14px;margin-bottom:24px">
+          <div style="width:56px;height:56px;background:linear-gradient(135deg,var(--green-dark),var(--green));border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0"><i class="fa-solid fa-book-open" style="color:white"></i></div>
+          <div><div style="font-size:.75rem;font-weight:700;color:var(--green-light);letter-spacing:.1em;text-transform:uppercase">Audio Libro</div><div style="font-size:1.1rem;font-weight:700;color:white;margin-top:2px">Secretos Revelados</div><div style="font-size:.82rem;color:rgba(255,255,255,.5);margin-top:2px">Laín García</div></div>
+        </div>
+        <div class="audio-player">
+          <div class="audio-title">Capítulo 1: Inteligencia Infinita</div>
+          <div class="audio-author">Laín García · Publicado Oct 6, 2022</div>
+          <div class="audio-controls"><button class="play-btn"><i class="fa-solid fa-play"></i></button><div class="progress-bar"><div class="progress-fill" style="width:0%"></div></div><span class="audio-time">15:20</span></div>
+        </div>
+        <p style="font-size:.875rem;color:rgba(255,255,255,.65);line-height:1.8;margin-top:20px">"La inteligencia infinita guía cada una de nuestras decisiones. Aprende a conectar con ella y a dejar que sea tu brújula en el camino hacia el éxito."</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MÓDULOS GRID -->
+<section style="padding:100px 0;background:var(--white)">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:64px" data-aos="fade-up">
+      <div class="section-tag"><i class="fa-solid fa-list-check"></i>Contenido del programa</div>
+      <h2 class="section-title">Todos los <span>módulos de formación</span></h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:20px">
+      <div class="module-card" data-aos="fade-up" data-aos-delay="0"><div class="module-num">01</div><div class="module-title">Introducción al mundo DXN</div><div class="module-desc">Historia, filosofía y valores de DXN. Por qué Ganoderma y cómo diferenciarte en el mercado.</div></div>
+      <div class="module-card" data-aos="fade-up" data-aos-delay="60"><div class="module-num">02</div><div class="module-title">Conocimiento de productos</div><div class="module-desc">Profundiza en cada línea de productos, sus beneficios, usos y testimonios de clientes reales.</div></div>
+      <div class="module-card" data-aos="fade-up" data-aos-delay="120"><div class="module-num">03</div><div class="module-title">Técnicas de ventas DXN</div><div class="module-desc">Cómo presentar los productos, manejar objeciones y cerrar ventas de manera natural y efectiva.</div></div>
+      <div class="module-card" data-aos="fade-up" data-aos-delay="180"><div class="module-num">04</div><div class="module-title">Construcción de red</div><div class="module-desc">Estrategias probadas para hacer crecer tu equipo de distribuidores y duplicar tu negocio.</div></div>
+      <div class="module-card" data-aos="fade-up" data-aos-delay="0"><div class="module-num">05</div><div class="module-title">Marketing digital</div><div class="module-desc">Redes sociales, WhatsApp Business, contenido de valor y estrategias digitales para distribuidores.</div></div>
+      <div class="module-card" data-aos="fade-up" data-aos-delay="60"><div class="module-num">06</div><div class="module-title">Liderazgo y mentoría</div><div class="module-desc">Cómo liderar a tu equipo, motivarlos, capacitarlos y llevarlos al siguiente nivel.</div></div>
+      <div class="module-card" data-aos="fade-up" data-aos-delay="120"><div class="module-num">07</div><div class="module-title">Finanzas personales</div><div class="module-desc">Administra tus ingresos DXN, planifica tu crecimiento financiero y construye patrimonio.</div></div>
+      <div class="module-card" data-aos="fade-up" data-aos-delay="180"><div class="module-num">08</div><div class="module-title">Mentalidad ganadora</div><div class="module-desc">Supera miedos, creencias limitantes y desarrolla la resiliencia que necesitas para triunfar.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section style="padding:80px 0;background:var(--gradient);position:relative;overflow:hidden">
+  <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:50px 50px"></div>
+  <div class="container" style="position:relative;z-index:2;text-align:center">
+    <div data-aos="fade-up">
+      <h2 style="font-family:'Playfair Display',serif;font-size:2.4rem;font-weight:700;color:white;margin-bottom:12px">¿Listo para comenzar tu formación?</h2>
+      <p style="color:rgba(255,255,255,.85);max-width:520px;margin:0 auto 36px;font-size:1rem">Contáctanos y un líder DXN te guiará personalmente en tu proceso de aprendizaje y crecimiento.</p>
+      <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
+        <a href="contacto.html" class="btn" style="background:white;color:var(--green-dark);font-weight:700;padding:16px 36px"><i class="fa-solid fa-envelope"></i>Quiero formarme</a>
+        <a href="https://wa.me/573012705375" target="_blank" class="btn" style="background:transparent;color:white;border:2px solid rgba(255,255,255,.5);padding:14px 34px"><i class="fa-brands fa-whatsapp"></i>WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand"><a href="index.html" class="nav-logo"><img src="assets/img/logo-dxn.png" alt="DXN Nutrición Colombia" class="nav-logo-img"></a><p>Formación de calidad para distribuidores DXN en Colombia.</p><div class="social-links"><a href="#" class="social-link"><i class="fa-brands fa-facebook-f"></i></a><a href="#" class="social-link"><i class="fa-brands fa-instagram"></i></a><a href="#" class="social-link"><i class="fa-brands fa-youtube"></i></a><a href="https://wa.me/573012705375" target="_blank" class="social-link"><i class="fa-brands fa-whatsapp"></i></a></div></div>
+      <div class="footer-col"><h4>Formación</h4><ul><li><a href="#empresarial"><i class="fa-solid fa-chevron-right"></i>Educación Empresarial</a></li><li><a href="#humano"><i class="fa-solid fa-chevron-right"></i>Desarrollo Humano</a></li><li><a href="blog.html"><i class="fa-solid fa-chevron-right"></i>Audio Libros</a></li></ul></div>
+      <div class="footer-col"><h4>Empresa</h4><ul><li><a href="nosotros.html"><i class="fa-solid fa-chevron-right"></i>Nosotros</a></li><li><a href="cafeterias.html"><i class="fa-solid fa-chevron-right"></i>Cafeterías</a></li><li><a href="productos.html"><i class="fa-solid fa-chevron-right"></i>Productos</a></li><li><a href="contacto.html"><i class="fa-solid fa-chevron-right"></i>Contacto</a></li></ul></div>
+      <div class="footer-col"><h4>Contacto</h4><ul><li><a href="tel:3012705375"><i class="fa-solid fa-phone"></i>301 270 5375</a></li><li><a href="tel:3156916984"><i class="fa-solid fa-phone"></i>315 691 6984</a></li><li><a href="mailto:ventas@dxnnutricion.com.co"><i class="fa-solid fa-envelope"></i>ventas@dxnnutricion.com.co</a></li><li><a href="#"><i class="fa-solid fa-location-dot"></i>Cll 75 #68G-70, Bogotá</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><p>© 2026 DXN Nutrición Colombia. Todos los derechos reservados.</p><p>Distribuidor autorizado <a href="https://www.dxn2u.com" target="_blank">DXN Internacional</a></p></div>
+  </div>
+</footer>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>AOS.init({duration:700,once:true,offset:60});const navbar=document.getElementById('navbar');window.addEventListener('scroll',()=>navbar.classList.toggle('scrolled',window.scrollY>40));function openMobileNav(){document.getElementById('mobile-nav').classList.add('open');document.getElementById('mobile-overlay').classList.add('open');document.body.style.overflow='hidden';}function closeMobileNav(){document.getElementById('mobile-nav').classList.remove('open');document.getElementById('mobile-overlay').classList.remove('open');document.body.style.overflow='';}
+document.querySelectorAll('.play-btn').forEach(btn=>btn.addEventListener('click',()=>{const i=btn.querySelector('i');i.classList.toggle('fa-play');i.classList.toggle('fa-pause');}));</script>
+<script src="assets/js/chat.js"></script>
+</body>
+</html>

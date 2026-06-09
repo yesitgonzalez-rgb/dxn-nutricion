@@ -1,0 +1,249 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog — DXN Nutrición Colombia</title>
+  <meta name="description" content="Blog DXN Nutrición Colombia: artículos sobre Ganoderma, bienestar natural, desarrollo personal, emprendimiento y audio libros." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="assets/css/shared.css" />
+  <style>
+    .blog-filter { display:flex; flex-wrap:wrap; gap:10px; margin-bottom:48px; }
+    .bf-btn { padding:10px 22px; border-radius:100px; font-size:.875rem; font-weight:600; border:2px solid var(--gray-200); background:var(--white); color:var(--gray-500); cursor:pointer; transition:var(--transition); }
+    .bf-btn:hover, .bf-btn.active { border-color:var(--green); color:var(--green); background:rgba(30,158,62,.06); }
+    .blog-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:28px; margin-bottom:48px; }
+    .blog-card { border-radius:var(--radius); overflow:hidden; border:1px solid var(--gray-200); background:var(--white); transition:var(--transition); }
+    .blog-card:hover { transform:translateY(-6px); box-shadow:var(--shadow-lg); }
+    .blog-card.featured { grid-column:span 3; display:grid; grid-template-columns:1fr 1fr; }
+    .blog-card.featured .blog-img { height:100%; min-height:280px; }
+    .blog-img { height:220px; display:flex; align-items:center; justify-content:center; font-size:3.5rem; color:white; position:relative; overflow:hidden; }
+    .blog-img::after { content:''; position:absolute; inset:0; background:linear-gradient(to bottom,transparent 40%,rgba(0,0,0,.35)); }
+    .blog-body { padding:28px; }
+    .blog-tag { display:inline-block; background:rgba(30,158,62,.1); color:var(--green); font-size:.7rem; font-weight:700; text-transform:uppercase; letter-spacing:.08em; padding:4px 10px; border-radius:100px; margin-bottom:12px; }
+    .blog-title { font-family:'Playfair Display',serif; font-size:1.2rem; font-weight:700; color:var(--gray-900); line-height:1.35; margin-bottom:12px; }
+    .blog-card.featured .blog-title { font-size:1.6rem; }
+    .blog-excerpt { font-size:.875rem; color:var(--gray-500); line-height:1.7; margin-bottom:20px; }
+    .blog-meta { display:flex; align-items:center; justify-content:space-between; }
+    .blog-date { font-size:.78rem; color:var(--gray-500); display:flex; align-items:center; gap:6px; }
+    .blog-read { font-size:.82rem; font-weight:700; color:var(--green); display:flex; align-items:center; gap:5px; transition:var(--transition); }
+    .blog-card:hover .blog-read { gap:9px; }
+    /* sidebar */
+    .blog-layout { display:grid; grid-template-columns:1fr 300px; gap:48px; align-items:start; }
+    .sidebar-widget { background:var(--white); border:1px solid var(--gray-200); border-radius:var(--radius); padding:28px; margin-bottom:24px; }
+    .sidebar-widget h3 { font-size:1rem; font-weight:700; color:var(--gray-900); margin-bottom:20px; padding-bottom:12px; border-bottom:2px solid var(--gray-100); }
+    .recent-post { display:flex; gap:14px; margin-bottom:16px; padding-bottom:16px; border-bottom:1px solid var(--gray-100); }
+    .recent-post:last-child { border-bottom:none; margin-bottom:0; padding-bottom:0; }
+    .recent-thumb { width:60px; height:60px; border-radius:8px; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:1.8rem; }
+    .recent-title { font-size:.875rem; font-weight:600; color:var(--gray-900); line-height:1.4; margin-bottom:4px; }
+    .recent-date { font-size:.75rem; color:var(--gray-500); }
+    .tag-cloud { display:flex; flex-wrap:wrap; gap:8px; }
+    .tag-item { background:var(--gray-50); border:1px solid var(--gray-200); color:var(--gray-600); font-size:.8rem; font-weight:600; padding:6px 14px; border-radius:100px; cursor:pointer; transition:var(--transition); }
+    .tag-item:hover { border-color:var(--green); color:var(--green); background:rgba(30,158,62,.06); }
+    @media(max-width:1024px){ .blog-layout{grid-template-columns:1fr;} .blog-grid{grid-template-columns:1fr 1fr;} .blog-card.featured{grid-column:span 2;} }
+    @media(max-width:768px){ .blog-grid{grid-template-columns:1fr;} .blog-card.featured{grid-column:span 1;display:block;} .blog-card.featured .blog-img{height:220px;} }
+  </style>
+<link rel="stylesheet" href="assets/css/chat.css" />
+</head>
+<body>
+<div id="mobile-overlay" onclick="closeMobileNav()"></div>
+<nav id="mobile-nav">
+  <div class="mobile-close" onclick="closeMobileNav()"><i class="fa-solid fa-xmark"></i></div>
+  <div class="mobile-nav-links">
+    <a href="nosotros.html"><i class="fa-solid fa-circle-info" style="color:var(--green);margin-right:10px"></i>Nosotros</a>
+    <details><summary><span><i class="fa-solid fa-leaf" style="color:var(--green);margin-right:10px"></i>Productos</span><i class="fa-solid fa-chevron-down" style="font-size:.75rem;color:var(--gray-500)"></i></summary><div class="mobile-sub"><a href="productos.html#suplementos"><i class="fa-solid fa-pills"></i>Suplementos</a><a href="productos.html#cuidado"><i class="fa-solid fa-hand-sparkles"></i>Cuidado Personal</a><a href="productos.html#belleza"><i class="fa-solid fa-star"></i>Belleza</a><a href="productos.html#bebidas"><i class="fa-solid fa-mug-hot"></i>Bebidas</a><a href="productos.html#combos"><i class="fa-solid fa-box"></i>Combos</a></div></details>
+    <a href="novedades.html"><i class="fa-solid fa-sparkles" style="color:var(--green);margin-right:10px"></i>Novedades</a>
+    <a href="cafeterias.html"><i class="fa-solid fa-store" style="color:var(--green);margin-right:10px"></i>Cafeterías</a>
+    <a href="formacion.html"><i class="fa-solid fa-graduation-cap" style="color:var(--green);margin-right:10px"></i>Formación</a>
+    <a href="blog.html" style="color:var(--green)"><i class="fa-solid fa-newspaper" style="color:var(--green);margin-right:10px"></i>Blog</a>
+    <a href="contacto.html"><i class="fa-solid fa-envelope" style="color:var(--green);margin-right:10px"></i>Contacto</a>
+  </div>
+  <div class="mobile-cta"><a href="tel:3012705375" class="btn btn-primary"><i class="fa-solid fa-phone"></i>Llamar ahora</a></div>
+</nav>
+
+<header id="navbar">
+  <div class="container">
+    <nav class="nav-inner">
+      <a href="index.html" class="nav-logo"><div class="nav-logo-icon"><svg viewBox="0 0 32 32"><path d="M16 4c-2 0-4 1-5 3-1.5-.5-3-.2-4 1s-.8 3 0 4c-1.5 1-2 3-1 4.5s3 2 4.5 1c.5 2 2.5 3.5 4.5 3.5s4-1.5 4.5-3.5c1.5 1 3.5.5 4.5-1s.5-3.5-1-4.5c.8-1 .8-3 0-4s-2.5-1.5-4-1c-1-2-3-3-5-3z" opacity=".9"/><line x1="16" y1="21" x2="16" y2="28" stroke="white" stroke-width="2.5" stroke-linecap="round"/></svg></div><div class="nav-logo-text"><span class="dxn">DXN</span><span class="nutricion">NUTRICIÓN</span></div></a>
+      <ul class="nav-links">
+        <li><a href="nosotros.html">Nosotros</a></li>
+        <li class="has-dropdown"><a href="productos.html">Productos <i class="fa-solid fa-chevron-down" style="font-size:.65rem"></i></a><div class="dropdown"><a href="productos.html#suplementos"><i class="fa-solid fa-pills"></i>Suplementos Dietarios</a><a href="productos.html#cuidado"><i class="fa-solid fa-hand-sparkles"></i>Cuidado Personal</a><a href="productos.html#belleza"><i class="fa-solid fa-star"></i>Belleza</a><a href="productos.html#bebidas"><i class="fa-solid fa-mug-hot"></i>Alimentos y Bebidas</a><a href="productos.html#combos"><i class="fa-solid fa-box"></i>Combos Ganoderma</a></div></li>
+        <li><a href="novedades.html">Novedades</a></li>
+        <li><a href="cafeterias.html">Cafeterías</a></li>
+        <li><a href="formacion.html">Formación</a></li>
+        <li><a href="blog.html" style="color:var(--green)">Blog</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+      <div class="nav-cta"><a href="tel:3012705375" class="phone"><i class="fa-solid fa-phone"></i> 301 270 5375</a><a href="contacto.html" class="btn btn-primary" style="padding:10px 22px;font-size:.875rem">Únete ahora</a></div>
+      <div class="hamburger" onclick="openMobileNav()"><span></span><span></span><span></span></div>
+    </nav>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="page-hero-bg"></div><div class="page-hero-grid"></div>
+  <div class="container">
+    <div class="page-hero-content" data-aos="fade-up">
+      <div class="breadcrumb"><a href="index.html">Inicio</a><i class="fa-solid fa-chevron-right"></i><span>Blog</span></div>
+      <div class="section-tag" style="background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.2);color:rgba(255,255,255,.85)"><i class="fa-solid fa-newspaper"></i>Blog DXN</div>
+      <h1>Conocimiento para tu <span>bienestar</span></h1>
+      <p>Artículos sobre Ganoderma, salud natural, desarrollo personal y emprendimiento. Aprende, crece y transforma tu vida.</p>
+    </div>
+  </div>
+</section>
+
+<section style="padding:80px 0;background:var(--gray-50)">
+  <div class="container">
+    <div class="blog-layout">
+      <!-- MAIN -->
+      <div>
+        <div class="blog-filter" data-aos="fade-up">
+          <button class="bf-btn active">Todos</button>
+          <button class="bf-btn">Ganoterapia</button>
+          <button class="bf-btn">Audio Libros</button>
+          <button class="bf-btn">Emprendimiento</button>
+          <button class="bf-btn">Bienestar</button>
+        </div>
+
+        <div class="blog-grid">
+          <!-- Featured -->
+          <div class="blog-card featured" data-aos="fade-up">
+            <div class="blog-img" style="background:linear-gradient(135deg,var(--blue),var(--blue-light))"><i class="fa-solid fa-book-open"></i></div>
+            <div class="blog-body" style="display:flex;flex-direction:column;justify-content:center">
+              <span class="blog-tag">Audio Libro · Destacado</span>
+              <div class="blog-title" id="cap2">Secretos Revelados – Capítulo 2: El Sabio de Corazón</div>
+              <div class="blog-excerpt">El corazón se refiere a la mente, a esos pensamientos y emociones, pero también a la morada del alma, que nos guía a través de la inteligencia infinita. En este segundo capítulo, Laín García nos lleva a un viaje profundo por la sabiduría del corazón y cómo aplicarla en nuestra vida cotidiana y en los negocios.</div>
+              <div class="blog-meta">
+                <span class="blog-date"><i class="fa-regular fa-calendar"></i> 6 de Octubre, 2022</span>
+                <a href="#cap2" class="blog-read">Leer artículo <i class="fa-solid fa-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Regular cards -->
+          <div class="blog-card" data-aos="fade-up" data-aos-delay="0">
+            <div class="blog-img" style="background:linear-gradient(135deg,var(--green-dark),var(--green))"><i class="fa-solid fa-seedling"></i></div>
+            <div class="blog-body">
+              <span class="blog-tag">Audio Libro</span>
+              <div class="blog-title" id="cap1">Secretos Revelados – Capítulo 1: Inteligencia Infinita</div>
+              <div class="blog-excerpt">Descubre cómo la inteligencia infinita guía cada una de nuestras decisiones y cómo conectar con ella.</div>
+              <div class="blog-meta"><span class="blog-date"><i class="fa-regular fa-calendar"></i> Oct 6, 2022</span><a href="#cap1" class="blog-read">Leer <i class="fa-solid fa-arrow-right"></i></a></div>
+            </div>
+          </div>
+
+          <div class="blog-card" data-aos="fade-up" data-aos-delay="80">
+            <div class="blog-img" style="background:linear-gradient(135deg,#5C6BC0,#7986CB)"><i class="fa-solid fa-microscope"></i></div>
+            <div class="blog-body">
+              <span class="blog-tag">Ganoterapia</span>
+              <div class="blog-title">¿Qué es el Ganoderma y por qué es tan poderoso?</div>
+              <div class="blog-excerpt">Conoce la ciencia detrás del hongo más estudiado del mundo y cómo puede transformar tu salud.</div>
+              <div class="blog-meta"><span class="blog-date"><i class="fa-regular fa-calendar"></i> Próximamente</span><a href="nosotros.html#ganoterapia" class="blog-read">Leer <i class="fa-solid fa-arrow-right"></i></a></div>
+            </div>
+          </div>
+
+          <div class="blog-card" data-aos="fade-up" data-aos-delay="0">
+            <div class="blog-img" style="background:linear-gradient(135deg,#E64A19,#FF7043)"><i class="fa-solid fa-mug-hot"></i></div>
+            <div class="blog-body">
+              <span class="blog-tag">Productos</span>
+              <div class="blog-title">Lingzhi Café: el café que cuida tu salud</div>
+              <div class="blog-excerpt">Descubre por qué millones de personas en el mundo han cambiado su café de siempre por Lingzhi.</div>
+              <div class="blog-meta"><span class="blog-date"><i class="fa-regular fa-calendar"></i> Próximamente</span><a href="productos.html#cafe" class="blog-read">Leer <i class="fa-solid fa-arrow-right"></i></a></div>
+            </div>
+          </div>
+
+          <div class="blog-card" data-aos="fade-up" data-aos-delay="80">
+            <div class="blog-img" style="background:linear-gradient(135deg,#00796B,#26A69A)"><i class="fa-solid fa-chart-line"></i></div>
+            <div class="blog-body">
+              <span class="blog-tag">Emprendimiento</span>
+              <div class="blog-title">Cómo construir un negocio DXN desde cero en 90 días</div>
+              <div class="blog-excerpt">Los pasos concretos que siguieron los distribuidores más exitosos de Colombia para arrancar.</div>
+              <div class="blog-meta"><span class="blog-date"><i class="fa-regular fa-calendar"></i> Próximamente</span><a href="contacto.html" class="blog-read">Leer <i class="fa-solid fa-arrow-right"></i></a></div>
+            </div>
+          </div>
+
+          <div class="blog-card" data-aos="fade-up" data-aos-delay="160">
+            <div class="blog-img" style="background:linear-gradient(135deg,#6A1B9A,#AB47BC)"><i class="fa-solid fa-spa"></i></div>
+            <div class="blog-body">
+              <span class="blog-tag">Bienestar</span>
+              <div class="blog-title">5 hábitos de bienestar que complementan la Ganoterapia</div>
+              <div class="blog-excerpt">Alimentación, sueño, ejercicio, meditación y Ganoderma: la fórmula perfecta para una vida plena.</div>
+              <div class="blog-meta"><span class="blog-date"><i class="fa-regular fa-calendar"></i> Próximamente</span><a href="contacto.html" class="blog-read">Leer <i class="fa-solid fa-arrow-right"></i></a></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pagination -->
+        <div style="display:flex;justify-content:center;gap:8px;margin-top:16px">
+          <div style="width:40px;height:40px;border-radius:50%;background:var(--gradient);color:white;display:flex;align-items:center;justify-content:center;font-size:.875rem;font-weight:700;cursor:pointer">1</div>
+          <div style="width:40px;height:40px;border-radius:50%;background:var(--white);border:1px solid var(--gray-200);color:var(--gray-500);display:flex;align-items:center;justify-content:center;font-size:.875rem;font-weight:600;cursor:pointer;transition:var(--transition)">2</div>
+          <div style="width:40px;height:40px;border-radius:50%;background:var(--white);border:1px solid var(--gray-200);color:var(--gray-500);display:flex;align-items:center;justify-content:center;font-size:.875rem;font-weight:600;cursor:pointer">→</div>
+        </div>
+      </div>
+
+      <!-- SIDEBAR -->
+      <div data-aos="fade-left">
+        <div class="sidebar-widget">
+          <h3>Buscar artículos</h3>
+          <div style="display:flex;gap:8px">
+            <input type="text" placeholder="Buscar..." style="flex:1;padding:10px 14px;border:1px solid var(--gray-200);border-radius:var(--radius-sm);font-family:'Inter',sans-serif;font-size:.875rem;outline:none;transition:var(--transition)" onfocus="this.style.borderColor='var(--green)'" onblur="this.style.borderColor='var(--gray-200)'" />
+            <button style="width:42px;height:42px;background:var(--gradient);border:none;border-radius:var(--radius-sm);color:white;cursor:pointer"><i class="fa-solid fa-magnifying-glass"></i></button>
+          </div>
+        </div>
+
+        <div class="sidebar-widget">
+          <h3>Artículos recientes</h3>
+          <div class="recent-post">
+            <div class="recent-thumb" style="background:linear-gradient(135deg,var(--blue),var(--blue-light))"><i class="fa-solid fa-book-open" style="font-size:1.4rem;color:white"></i></div>
+            <div><div class="recent-title">Secretos Revelados – Cap. 2: El Sabio de Corazón</div><div class="recent-date"><i class="fa-regular fa-calendar" style="margin-right:4px"></i>Oct 6, 2022</div></div>
+          </div>
+          <div class="recent-post">
+            <div class="recent-thumb" style="background:linear-gradient(135deg,var(--green-dark),var(--green))"><i class="fa-solid fa-seedling" style="font-size:1.4rem;color:white"></i></div>
+            <div><div class="recent-title">Secretos Revelados – Cap. 1: Inteligencia Infinita</div><div class="recent-date"><i class="fa-regular fa-calendar" style="margin-right:4px"></i>Oct 6, 2022</div></div>
+          </div>
+        </div>
+
+        <div class="sidebar-widget">
+          <h3>Temas del blog</h3>
+          <div class="tag-cloud">
+            <span class="tag-item">Ganoderma</span>
+            <span class="tag-item">Ganoterapia</span>
+            <span class="tag-item">Bienestar</span>
+            <span class="tag-item">Café DXN</span>
+            <span class="tag-item">Spirulina</span>
+            <span class="tag-item">Emprendimiento</span>
+            <span class="tag-item">Audio Libros</span>
+            <span class="tag-item">Desarrollo Personal</span>
+            <span class="tag-item">Cafeterías</span>
+            <span class="tag-item">Distribución</span>
+          </div>
+        </div>
+
+        <div style="background:var(--gradient);border-radius:var(--radius);padding:28px;text-align:center;color:white">
+          <i class="fa-brands fa-whatsapp" style="font-size:2rem;margin-bottom:12px;opacity:.9"></i>
+          <h3 style="font-size:1rem;font-weight:700;margin-bottom:8px">¿Tienes preguntas?</h3>
+          <p style="font-size:.85rem;color:rgba(255,255,255,.8);margin-bottom:16px">Chatea con nosotros directamente por WhatsApp</p>
+          <a href="https://wa.me/573012705375" target="_blank" class="btn" style="background:white;color:var(--green-dark);font-weight:700;padding:10px 20px;font-size:.875rem;width:100%;justify-content:center"><i class="fa-brands fa-whatsapp"></i>Escribir ahora</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand"><a href="index.html" class="nav-logo"><img src="assets/img/logo-dxn.png" alt="DXN Nutrición Colombia" class="nav-logo-img"></a><p>Contenido de valor sobre bienestar natural y desarrollo personal.</p><div class="social-links"><a href="#" class="social-link"><i class="fa-brands fa-facebook-f"></i></a><a href="#" class="social-link"><i class="fa-brands fa-instagram"></i></a><a href="#" class="social-link"><i class="fa-brands fa-youtube"></i></a><a href="https://wa.me/573012705375" target="_blank" class="social-link"><i class="fa-brands fa-whatsapp"></i></a></div></div>
+      <div class="footer-col"><h4>Categorías</h4><ul><li><a href="#"><i class="fa-solid fa-chevron-right"></i>Ganoterapia</a></li><li><a href="#"><i class="fa-solid fa-chevron-right"></i>Audio Libros</a></li><li><a href="#"><i class="fa-solid fa-chevron-right"></i>Emprendimiento</a></li><li><a href="#"><i class="fa-solid fa-chevron-right"></i>Bienestar</a></li></ul></div>
+      <div class="footer-col"><h4>Empresa</h4><ul><li><a href="nosotros.html"><i class="fa-solid fa-chevron-right"></i>Nosotros</a></li><li><a href="productos.html"><i class="fa-solid fa-chevron-right"></i>Productos</a></li><li><a href="cafeterias.html"><i class="fa-solid fa-chevron-right"></i>Cafeterías</a></li><li><a href="formacion.html"><i class="fa-solid fa-chevron-right"></i>Formación</a></li><li><a href="contacto.html"><i class="fa-solid fa-chevron-right"></i>Contacto</a></li></ul></div>
+      <div class="footer-col"><h4>Contacto</h4><ul><li><a href="tel:3012705375"><i class="fa-solid fa-phone"></i>301 270 5375</a></li><li><a href="tel:3156916984"><i class="fa-solid fa-phone"></i>315 691 6984</a></li><li><a href="mailto:ventas@dxnnutricion.com.co"><i class="fa-solid fa-envelope"></i>ventas@dxnnutricion.com.co</a></li><li><a href="#"><i class="fa-solid fa-location-dot"></i>Cll 75 #68G-70, Bogotá</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><p>© 2026 DXN Nutrición Colombia. Todos los derechos reservados.</p><p>Distribuidor autorizado <a href="https://www.dxn2u.com" target="_blank">DXN Internacional</a></p></div>
+  </div>
+</footer>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>AOS.init({duration:700,once:true,offset:60});const navbar=document.getElementById('navbar');window.addEventListener('scroll',()=>navbar.classList.toggle('scrolled',window.scrollY>40));function openMobileNav(){document.getElementById('mobile-nav').classList.add('open');document.getElementById('mobile-overlay').classList.add('open');document.body.style.overflow='hidden';}function closeMobileNav(){document.getElementById('mobile-nav').classList.remove('open');document.getElementById('mobile-overlay').classList.remove('open');document.body.style.overflow='';}
+document.querySelectorAll('.bf-btn').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('.bf-btn').forEach(x=>x.classList.remove('active'));b.classList.add('active');}));</script>
+<script src="assets/js/chat.js"></script>
+</body>
+</html>

@@ -1,0 +1,188 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cafeterías Saludables — DXN Nutrición Colombia</title>
+  <meta name="description" content="Abre tu propia Cafetería Saludable DXN en Colombia. Modelo de negocio comprobado, productos únicos con Ganoderma y acompañamiento completo." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="assets/css/shared.css" />
+  <style>
+    .menu-card { background:var(--white); border:1px solid var(--gray-200); border-radius:var(--radius); padding:28px; transition:var(--transition); text-align:center; }
+    .menu-card:hover { transform:translateY(-6px); box-shadow:var(--shadow-lg); border-color:rgba(30,158,62,.3); }
+    .menu-icon { font-size:2.8rem; margin-bottom:14px; }
+    .menu-name { font-size:1rem; font-weight:700; color:var(--gray-900); margin-bottom:6px; }
+    .menu-desc { font-size:.85rem; color:var(--gray-500); line-height:1.6; }
+    .step-card { display:flex; gap:24px; align-items:flex-start; }
+    .step-num { width:52px; height:52px; border-radius:50%; background:var(--gradient); color:white; font-family:'Playfair Display',serif; font-size:1.4rem; font-weight:700; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+    .step-body h3 { font-size:1.1rem; font-weight:700; color:var(--gray-900); margin-bottom:6px; }
+    .step-body p { font-size:.9rem; color:var(--gray-500); line-height:1.7; }
+    .benefit-row { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
+    .benefit-item { background:var(--gray-50); border:1px solid var(--gray-200); border-radius:var(--radius); padding:28px; transition:var(--transition); }
+    .benefit-item:hover { border-color:var(--green); background:linear-gradient(135deg,rgba(30,158,62,.04),rgba(27,58,140,.04)); }
+    .benefit-item i { font-size:1.8rem; background:var(--gradient); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; margin-bottom:12px; display:block; }
+    .benefit-item h3 { font-size:1rem; font-weight:700; color:var(--gray-900); margin-bottom:8px; }
+    .benefit-item p { font-size:.875rem; color:var(--gray-500); line-height:1.7; }
+    @media(max-width:768px){ .benefit-row{grid-template-columns:1fr;} }
+    @media(max-width:1024px){ .benefit-row{grid-template-columns:1fr 1fr;} }
+  </style>
+<link rel="stylesheet" href="assets/css/chat.css" />
+</head>
+<body>
+<div id="mobile-overlay" onclick="closeMobileNav()"></div>
+<nav id="mobile-nav">
+  <div class="mobile-close" onclick="closeMobileNav()"><i class="fa-solid fa-xmark"></i></div>
+  <div class="mobile-nav-links">
+    <a href="nosotros.html"><i class="fa-solid fa-circle-info" style="color:var(--green);margin-right:10px"></i>Nosotros</a>
+    <details><summary><span><i class="fa-solid fa-leaf" style="color:var(--green);margin-right:10px"></i>Productos</span><i class="fa-solid fa-chevron-down" style="font-size:.75rem;color:var(--gray-500)"></i></summary><div class="mobile-sub"><a href="productos.html#suplementos"><i class="fa-solid fa-pills"></i>Suplementos</a><a href="productos.html#cuidado"><i class="fa-solid fa-hand-sparkles"></i>Cuidado Personal</a><a href="productos.html#belleza"><i class="fa-solid fa-star"></i>Belleza</a><a href="productos.html#bebidas"><i class="fa-solid fa-mug-hot"></i>Bebidas</a><a href="productos.html#combos"><i class="fa-solid fa-box"></i>Combos</a></div></details>
+    <a href="novedades.html"><i class="fa-solid fa-sparkles" style="color:var(--green);margin-right:10px"></i>Novedades</a>
+    <a href="cafeterias.html" style="color:var(--green)"><i class="fa-solid fa-store" style="color:var(--green);margin-right:10px"></i>Cafeterías</a>
+    <a href="formacion.html"><i class="fa-solid fa-graduation-cap" style="color:var(--green);margin-right:10px"></i>Formación</a>
+    <a href="blog.html"><i class="fa-solid fa-newspaper" style="color:var(--green);margin-right:10px"></i>Blog</a>
+    <a href="contacto.html"><i class="fa-solid fa-envelope" style="color:var(--green);margin-right:10px"></i>Contacto</a>
+  </div>
+  <div class="mobile-cta"><a href="tel:3012705375" class="btn btn-primary"><i class="fa-solid fa-phone"></i>Llamar ahora</a></div>
+</nav>
+
+<header id="navbar">
+  <div class="container">
+    <nav class="nav-inner">
+      <a href="index.html" class="nav-logo"><div class="nav-logo-icon"><svg viewBox="0 0 32 32"><path d="M16 4c-2 0-4 1-5 3-1.5-.5-3-.2-4 1s-.8 3 0 4c-1.5 1-2 3-1 4.5s3 2 4.5 1c.5 2 2.5 3.5 4.5 3.5s4-1.5 4.5-3.5c1.5 1 3.5.5 4.5-1s.5-3.5-1-4.5c.8-1 .8-3 0-4s-2.5-1.5-4-1c-1-2-3-3-5-3z" opacity=".9"/><line x1="16" y1="21" x2="16" y2="28" stroke="white" stroke-width="2.5" stroke-linecap="round"/></svg></div><div class="nav-logo-text"><span class="dxn">DXN</span><span class="nutricion">NUTRICIÓN</span></div></a>
+      <ul class="nav-links">
+        <li><a href="nosotros.html">Nosotros</a></li>
+        <li class="has-dropdown"><a href="productos.html">Productos <i class="fa-solid fa-chevron-down" style="font-size:.65rem"></i></a><div class="dropdown"><a href="productos.html#suplementos"><i class="fa-solid fa-pills"></i>Suplementos Dietarios</a><a href="productos.html#cuidado"><i class="fa-solid fa-hand-sparkles"></i>Cuidado Personal</a><a href="productos.html#belleza"><i class="fa-solid fa-star"></i>Belleza</a><a href="productos.html#bebidas"><i class="fa-solid fa-mug-hot"></i>Alimentos y Bebidas</a><a href="productos.html#combos"><i class="fa-solid fa-box"></i>Combos Ganoderma</a></div></li>
+        <li><a href="novedades.html">Novedades</a></li>
+        <li><a href="cafeterias.html" style="color:var(--green)">Cafeterías</a></li>
+        <li><a href="formacion.html">Formación</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+      <div class="nav-cta"><a href="tel:3012705375" class="phone"><i class="fa-solid fa-phone"></i> 301 270 5375</a><a href="contacto.html" class="btn btn-primary" style="padding:10px 22px;font-size:.875rem">Únete ahora</a></div>
+      <div class="hamburger" onclick="openMobileNav()"><span></span><span></span><span></span></div>
+    </nav>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="page-hero-bg"></div><div class="page-hero-grid"></div>
+  <div class="container">
+    <div class="page-hero-content" data-aos="fade-up">
+      <div class="breadcrumb"><a href="index.html">Inicio</a><i class="fa-solid fa-chevron-right"></i><span>Cafeterías Saludables</span></div>
+      <div class="section-tag" style="background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.2);color:rgba(255,255,255,.85)"><i class="fa-solid fa-store"></i>Modelo de negocio</div>
+      <h1>Tu <span>Cafetería Saludable</span><br>DXN, tu negocio</h1>
+      <p>Crea un espacio de bienestar único en tu ciudad. Con los productos DXN como base, construye un negocio rentable, diferenciado y con propósito.</p>
+    </div>
+  </div>
+</section>
+
+<!-- QUÉ ES -->
+<section style="padding:100px 0;background:var(--white)">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center">
+      <div data-aos="fade-right">
+        <div class="section-tag"><i class="fa-solid fa-lightbulb"></i>El concepto</div>
+        <h2 class="section-title">Un espacio de <span>bienestar único</span></h2>
+        <p style="color:var(--gray-500);line-height:1.8;margin-top:16px;margin-bottom:20px">Las Cafeterías Saludables DXN son mucho más que un café: son puntos de encuentro para personas que buscan un estilo de vida consciente y saludable. Un negocio con alma y propósito.</p>
+        <p style="color:var(--gray-500);line-height:1.8;margin-bottom:32px">"En DXN Nutrición tenemos un enfoque holístico. Si tienes la visión de crear un espacio como lo son las Cafeterías Saludables, lo puedes hacer con nuestro respaldo y acompañamiento completo."</p>
+        <div style="display:flex;flex-direction:column;gap:14px">
+          <div style="display:flex;align-items:center;gap:14px"><div style="width:38px;height:38px;background:linear-gradient(135deg,rgba(30,158,62,.12),rgba(27,58,140,.12));border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--green)"><i class="fa-solid fa-mug-hot"></i></div><span style="font-size:.95rem;font-weight:500;color:var(--gray-700)">Bebidas y alimentos saludables con Ganoderma</span></div>
+          <div style="display:flex;align-items:center;gap:14px"><div style="width:38px;height:38px;background:linear-gradient(135deg,rgba(30,158,62,.12),rgba(27,58,140,.12));border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--green)"><i class="fa-solid fa-spa"></i></div><span style="font-size:.95rem;font-weight:500;color:var(--gray-700)">Experiencias de bienestar y cuidado de piel</span></div>
+          <div style="display:flex;align-items:center;gap:14px"><div style="width:38px;height:38px;background:linear-gradient(135deg,rgba(30,158,62,.12),rgba(27,58,140,.12));border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--green)"><i class="fa-solid fa-network-wired"></i></div><span style="font-size:.95rem;font-weight:500;color:var(--gray-700)">Centro de networking y expansión de red DXN</span></div>
+          <div style="display:flex;align-items:center;gap:14px"><div style="width:38px;height:38px;background:linear-gradient(135deg,rgba(30,158,62,.12),rgba(27,58,140,.12));border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--green)"><i class="fa-solid fa-book-open"></i></div><span style="font-size:.95rem;font-weight:500;color:var(--gray-700)">Espacio para leer, relajarse y compartir</span></div>
+        </div>
+      </div>
+      <div data-aos="fade-left">
+        <div style="background:var(--gradient);border-radius:var(--radius-xl);padding:48px;color:white;text-align:center;margin-bottom:20px">
+          <i class="fa-solid fa-store" style="font-size:3rem;margin-bottom:16px;opacity:.8"></i>
+          <h3 style="font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:700;margin-bottom:8px">Cafetería Saludable DXN</h3>
+          <p style="color:rgba(255,255,255,.8);font-size:.9rem">Bogotá · Calle 75 No. 68 G 70</p>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+          <div style="background:var(--gray-50);border:1px solid var(--gray-200);border-radius:var(--radius);padding:20px;text-align:center"><div style="font-size:1.8rem;margin-bottom:8px">☕</div><span style="font-size:.85rem;font-weight:600;color:var(--gray-700)">Bebidas Ganoderma</span></div>
+          <div style="background:var(--gray-50);border:1px solid var(--gray-200);border-radius:var(--radius);padding:20px;text-align:center"><div style="font-size:1.8rem;margin-bottom:8px">🥐</div><span style="font-size:.85rem;font-weight:600;color:var(--gray-700)">Alimentos naturales</span></div>
+          <div style="background:var(--gray-50);border:1px solid var(--gray-200);border-radius:var(--radius);padding:20px;text-align:center"><div style="font-size:1.8rem;margin-bottom:8px">💆</div><span style="font-size:.85rem;font-weight:600;color:var(--gray-700)">Experiencias wellness</span></div>
+          <div style="background:var(--gray-50);border:1px solid var(--gray-200);border-radius:var(--radius);padding:20px;text-align:center"><div style="font-size:1.8rem;margin-bottom:8px">🤝</div><span style="font-size:.85rem;font-weight:600;color:var(--gray-700)">Red de contactos</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MENÚ -->
+<section style="padding:100px 0;background:var(--gray-50)">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:64px" data-aos="fade-up">
+      <div class="section-tag"><i class="fa-solid fa-utensils"></i>Oferta gastronómica</div>
+      <h2 class="section-title">Lo que ofrecemos <span>en tu cafetería</span></h2>
+      <p class="section-sub" style="margin:0 auto">Un menú cuidadosamente diseñado que combina sabor, salud y los beneficios únicos del Ganoderma DXN.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:20px">
+      <div class="menu-card" data-aos="fade-up" data-aos-delay="0"><div class="menu-icon">☕</div><div class="menu-name">Lingzhi Café</div><div class="menu-desc">Café arábica premium con extracto de Ganoderma. La estrella del menú.</div></div>
+      <div class="menu-card" data-aos="fade-up" data-aos-delay="60"><div class="menu-icon">🍫</div><div class="menu-name">Zhi Mocha</div><div class="menu-desc">Café con cacao y Ganoderma. Indulgente y saludable a la vez.</div></div>
+      <div class="menu-card" data-aos="fade-up" data-aos-delay="120"><div class="menu-icon">🍵</div><div class="menu-name">Tés DXN</div><div class="menu-desc">Variedad de tés con Ganoderma. Zhi Tea, Oolong, y más opciones.</div></div>
+      <div class="menu-card" data-aos="fade-up" data-aos-delay="180"><div class="menu-icon">🥥</div><div class="menu-name">Bebidas de Coco</div><div class="menu-desc">Cocozhi refrescante, natural y lleno de electrolitos.</div></div>
+      <div class="menu-card" data-aos="fade-up" data-aos-delay="0"><div class="menu-icon">🥐</div><div class="menu-name">Desayunos</div><div class="menu-desc">Opciones saludables para empezar el día con energía.</div></div>
+      <div class="menu-card" data-aos="fade-up" data-aos-delay="60"><div class="menu-icon">🍽️</div><div class="menu-name">Almuerzos</div><div class="menu-desc">Platos nutritivos y balanceados con ingredientes naturales.</div></div>
+      <div class="menu-card" data-aos="fade-up" data-aos-delay="120"><div class="menu-icon">🧁</div><div class="menu-name">Snacks y Muffins</div><div class="menu-desc">Crepes, galletas y muffins saludables hechos con amor.</div></div>
+      <div class="menu-card" data-aos="fade-up" data-aos-delay="180"><div class="menu-icon">🧴</div><div class="menu-name">Mascarillas DXN</div><div class="menu-desc">Experiencias de cuidado de piel con productos Ganozhi.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- BENEFICIOS DEL MODELO -->
+<section style="padding:100px 0;background:var(--white)">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:64px" data-aos="fade-up">
+      <div class="section-tag"><i class="fa-solid fa-chart-line"></i>¿Por qué elegir este modelo?</div>
+      <h2 class="section-title">Ventajas de tu <span>Cafetería Saludable</span></h2>
+    </div>
+    <div class="benefit-row">
+      <div class="benefit-item" data-aos="fade-up" data-aos-delay="0"><i class="fa-solid fa-trademark"></i><h3>Marca con respaldo global</h3><p>DXN está presente en más de 180 países. Tu cafetería nace con el respaldo de una marca internacionalmente reconocida y de confianza.</p></div>
+      <div class="benefit-item" data-aos="fade-up" data-aos-delay="80"><i class="fa-solid fa-box-open"></i><h3>Productos únicos y diferenciados</h3><p>El Ganoderma en bebidas y alimentos es un diferenciador poderoso. No hay competencia directa en el mercado colombiano.</p></div>
+      <div class="benefit-item" data-aos="fade-up" data-aos-delay="160"><i class="fa-solid fa-hands-holding-circle"></i><h3>Modelo duplicable</h3><p>El sistema es replicable en cualquier ciudad. Una vez dominas el modelo, puedes expandirte o ayudar a otros a abrir sus propias cafeterías.</p></div>
+      <div class="benefit-item" data-aos="fade-up" data-aos-delay="0"><i class="fa-solid fa-graduation-cap"></i><h3>Capacitación incluida</h3><p>Recibirás formación completa en productos, preparación de bebidas, atención al cliente y estrategias de crecimiento de red.</p></div>
+      <div class="benefit-item" data-aos="fade-up" data-aos-delay="80"><i class="fa-solid fa-network-wired"></i><h3>Red de distribuidores</h3><p>Tu cafetería es un punto de contacto natural para distribuir productos DXN y expandir tu red de distribuidores activos.</p></div>
+      <div class="benefit-item" data-aos="fade-up" data-aos-delay="160"><i class="fa-solid fa-heart"></i><h3>Negocio con propósito</h3><p>No solo vendes café: transformas la salud de tu comunidad. Un negocio que te llena el corazón y la billetera al mismo tiempo.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CÓMO EMPEZAR -->
+<section style="padding:100px 0;background:var(--gray-900);position:relative;overflow:hidden">
+  <div style="position:absolute;inset:0;background:var(--gradient);opacity:.15"></div>
+  <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);background-size:40px 40px"></div>
+  <div class="container" style="position:relative;z-index:2">
+    <div style="text-align:center;margin-bottom:64px" data-aos="fade-up">
+      <div class="section-tag" style="background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.2);color:rgba(255,255,255,.85)"><i class="fa-solid fa-rocket"></i>Cómo empezar</div>
+      <h2 style="font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,3rem);font-weight:700;color:white;line-height:1.15">4 pasos para abrir tu <span style="background:linear-gradient(135deg,#6EE89B,#A8D8F0);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">Cafetería Saludable</span></h2>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:32px;max-width:700px;margin:0 auto">
+      <div class="step-card" data-aos="fade-up" data-aos-delay="0"><div class="step-num">1</div><div class="step-body"><h3 style="color:white">Contáctanos y agenda una reunión</h3><p style="color:rgba(255,255,255,.7)">El primer paso es conocernos. Cuéntanos tu visión, tu ciudad y tus recursos. Evaluaremos juntos la viabilidad y el modelo más adecuado para ti.</p></div></div>
+      <div class="step-card" data-aos="fade-up" data-aos-delay="100"><div class="step-num">2</div><div class="step-body"><h3 style="color:white">Formación y certificación DXN</h3><p style="color:rgba(255,255,255,.7)">Recibirás capacitación completa sobre productos, preparación de bebidas con Ganoderma, manejo de clientes y estrategia de negocio.</p></div></div>
+      <div class="step-card" data-aos="fade-up" data-aos-delay="200"><div class="step-num">3</div><div class="step-body"><h3 style="color:white">Diseño y montaje de tu espacio</h3><p style="color:rgba(255,255,255,.7)">Te orientaremos en el diseño del espacio físico para que refleje la filosofía DXN: natural, acogedor, moderno y enfocado en bienestar.</p></div></div>
+      <div class="step-card" data-aos="fade-up" data-aos-delay="300"><div class="step-num">4</div><div class="step-body"><h3 style="color:white">¡Gran apertura y crecimiento!</h3><p style="color:rgba(255,255,255,.7)">Con nuestro apoyo, inaugurarás tu cafetería y comenzarás a construir una comunidad saludable en tu ciudad con ingresos recurrentes.</p></div></div>
+    </div>
+    <div style="text-align:center;margin-top:56px" data-aos="fade-up">
+      <a href="contacto.html?tipo=cafeteria" class="btn" style="background:white;color:var(--green-dark);font-weight:700;padding:18px 40px;font-size:1rem;box-shadow:0 8px 30px rgba(0,0,0,.2)"><i class="fa-solid fa-store"></i>Quiero abrir mi cafetería</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand"><a href="index.html" class="nav-logo"><img src="assets/img/logo-dxn.png" alt="DXN Nutrición Colombia" class="nav-logo-img"></a><p>Espacios de bienestar natural que transforman comunidades en Colombia.</p><div class="social-links"><a href="#" class="social-link"><i class="fa-brands fa-facebook-f"></i></a><a href="#" class="social-link"><i class="fa-brands fa-instagram"></i></a><a href="#" class="social-link"><i class="fa-brands fa-youtube"></i></a><a href="https://wa.me/573012705375" target="_blank" class="social-link"><i class="fa-brands fa-whatsapp"></i></a></div></div>
+      <div class="footer-col"><h4>Productos</h4><ul><li><a href="productos.html#suplementos"><i class="fa-solid fa-chevron-right"></i>Suplementos</a></li><li><a href="productos.html#cuidado"><i class="fa-solid fa-chevron-right"></i>Cuidado Personal</a></li><li><a href="productos.html#bebidas"><i class="fa-solid fa-chevron-right"></i>Bebidas</a></li><li><a href="novedades.html"><i class="fa-solid fa-chevron-right"></i>Novedades</a></li></ul></div>
+      <div class="footer-col"><h4>Empresa</h4><ul><li><a href="nosotros.html"><i class="fa-solid fa-chevron-right"></i>Nosotros</a></li><li><a href="cafeterias.html"><i class="fa-solid fa-chevron-right"></i>Cafeterías</a></li><li><a href="formacion.html"><i class="fa-solid fa-chevron-right"></i>Formación</a></li><li><a href="blog.html"><i class="fa-solid fa-chevron-right"></i>Blog</a></li><li><a href="contacto.html"><i class="fa-solid fa-chevron-right"></i>Contacto</a></li></ul></div>
+      <div class="footer-col"><h4>Contacto</h4><ul><li><a href="tel:3012705375"><i class="fa-solid fa-phone"></i>301 270 5375</a></li><li><a href="tel:3156916984"><i class="fa-solid fa-phone"></i>315 691 6984</a></li><li><a href="mailto:ventas@dxnnutricion.com.co"><i class="fa-solid fa-envelope"></i>ventas@dxnnutricion.com.co</a></li><li><a href="#"><i class="fa-solid fa-location-dot"></i>Cll 75 #68G-70, Bogotá</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><p>© 2026 DXN Nutrición Colombia. Todos los derechos reservados.</p><p>Distribuidor autorizado <a href="https://www.dxn2u.com" target="_blank">DXN Internacional</a></p></div>
+  </div>
+</footer>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>AOS.init({duration:700,once:true,offset:60});const navbar=document.getElementById('navbar');window.addEventListener('scroll',()=>navbar.classList.toggle('scrolled',window.scrollY>40));function openMobileNav(){document.getElementById('mobile-nav').classList.add('open');document.getElementById('mobile-overlay').classList.add('open');document.body.style.overflow='hidden';}function closeMobileNav(){document.getElementById('mobile-nav').classList.remove('open');document.getElementById('mobile-overlay').classList.remove('open');document.body.style.overflow='';}</script>
+<script src="assets/js/chat.js"></script>
+</body>
+</html>

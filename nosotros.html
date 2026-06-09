@@ -1,0 +1,310 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nosotros — DXN Nutrición Colombia</title>
+  <meta name="description" content="Conoce la historia de DXN, fundada en 1993 por el Dr. Lim Siow Jin. Distribuidores oficiales en Colombia con más de 30 años de trayectoria global." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="assets/css/shared.css" />
+  <style>
+    /* timeline */
+    .timeline { position:relative; padding-left:40px; }
+    .timeline::before { content:''; position:absolute; left:16px; top:0; bottom:0; width:2px; background:var(--gradient); }
+    .tl-item { position:relative; margin-bottom:48px; }
+    .tl-dot { position:absolute; left:-32px; top:4px; width:16px; height:16px; border-radius:50%; background:var(--gradient); border:3px solid var(--white); box-shadow:0 0 0 3px rgba(30,158,62,.3); }
+    .tl-year { font-size:.75rem; font-weight:800; color:var(--green); letter-spacing:.1em; text-transform:uppercase; margin-bottom:6px; }
+    .tl-title { font-size:1.1rem; font-weight:700; color:var(--gray-900); margin-bottom:6px; }
+    .tl-desc { font-size:.9rem; color:var(--gray-500); line-height:1.7; }
+    /* values */
+    .values-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
+    .value-card { padding:36px 28px; border-radius:var(--radius-xl); background:var(--gray-50); border:1px solid var(--gray-200); text-align:center; transition:var(--transition); }
+    .value-card:hover { border-color:var(--green); transform:translateY(-6px); box-shadow:var(--shadow-lg); }
+    .value-icon { width:64px; height:64px; background:var(--gradient); border-radius:18px; display:flex; align-items:center; justify-content:center; font-size:1.6rem; color:white; margin:0 auto 20px; }
+    .value-card h3 { font-size:1.1rem; font-weight:700; color:var(--gray-900); margin-bottom:10px; }
+    .value-card p { font-size:.875rem; color:var(--gray-500); line-height:1.7; }
+    /* team */
+    .team-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(240px,1fr)); gap:28px; }
+    .team-card { background:var(--white); border-radius:var(--radius-xl); overflow:hidden; border:1px solid var(--gray-200); transition:var(--transition); }
+    .team-card:hover { transform:translateY(-6px); box-shadow:var(--shadow-lg); }
+    .team-photo { height:220px; background:var(--gradient); display:flex; align-items:center; justify-content:center; font-size:4rem; color:white; }
+    .team-info { padding:24px; }
+    .team-name { font-size:1.05rem; font-weight:700; color:var(--gray-900); }
+    .team-role { font-size:.82rem; color:var(--green); font-weight:600; margin:4px 0 10px; }
+    .team-desc { font-size:.85rem; color:var(--gray-500); line-height:1.6; }
+    /* ganoterapia */
+    .gano-feature { background:var(--gray-900); border-radius:var(--radius-xl); padding:60px; position:relative; overflow:hidden; }
+    .gano-feature-bg { position:absolute; inset:0; background:var(--gradient); opacity:.12; }
+    .gano-feature-grid { position:relative; z-index:2; display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:center; }
+    .gano-feature h2 { font-family:'Playfair Display',serif; font-size:2.4rem; font-weight:700; color:white; margin-bottom:16px; }
+    .gano-feature h2 span { background:linear-gradient(135deg,#6EE89B,#A8D8F0); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+    .gano-feature p { color:rgba(255,255,255,.75); line-height:1.8; margin-bottom:20px; font-size:.95rem; }
+    .gano-props { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+    .gano-prop { background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.12); border-radius:var(--radius); padding:20px; text-align:center; }
+    .gano-prop i { font-size:1.4rem; color:var(--green-light); margin-bottom:8px; }
+    .gano-prop span { display:block; font-size:.82rem; font-weight:600; color:rgba(255,255,255,.8); }
+    /* stats band */
+    .stats-band { background:var(--gradient); padding:64px 0; }
+    .stats-row { display:grid; grid-template-columns:repeat(4,1fr); gap:32px; }
+    .stat-item { text-align:center; }
+    .stat-num { font-family:'Playfair Display',serif; font-size:2.8rem; font-weight:700; color:white; line-height:1; }
+    .stat-label { font-size:.85rem; color:rgba(255,255,255,.75); font-weight:500; margin-top:6px; }
+    @media(max-width:1024px){ .values-grid{grid-template-columns:1fr 1fr;} .gano-feature-grid{grid-template-columns:1fr;gap:32px;} .stats-row{grid-template-columns:repeat(2,1fr);} }
+    @media(max-width:768px){ .values-grid{grid-template-columns:1fr;} .stats-row{grid-template-columns:1fr 1fr;} }
+  </style>
+<link rel="stylesheet" href="assets/css/chat.css" />
+</head>
+<body>
+<div id="mobile-overlay" onclick="closeMobileNav()"></div>
+<nav id="mobile-nav">
+  <div class="mobile-close" onclick="closeMobileNav()"><i class="fa-solid fa-xmark"></i></div>
+  <div class="mobile-nav-links">
+    <a href="nosotros.html"><i class="fa-solid fa-circle-info" style="color:var(--green);margin-right:10px"></i>Nosotros</a>
+    <details><summary><span><i class="fa-solid fa-leaf" style="color:var(--green);margin-right:10px"></i>Productos</span><i class="fa-solid fa-chevron-down" style="font-size:.75rem;color:var(--gray-500)"></i></summary>
+      <div class="mobile-sub">
+        <a href="productos.html#suplementos"><i class="fa-solid fa-pills"></i>Suplementos</a>
+        <a href="productos.html#cuidado"><i class="fa-solid fa-hand-sparkles"></i>Cuidado Personal</a>
+        <a href="productos.html#belleza"><i class="fa-solid fa-star"></i>Belleza</a>
+        <a href="productos.html#bebidas"><i class="fa-solid fa-mug-hot"></i>Alimentos y Bebidas</a>
+        <a href="productos.html#combos"><i class="fa-solid fa-box"></i>Combos</a>
+      </div>
+    </details>
+    <a href="novedades.html"><i class="fa-solid fa-sparkles" style="color:var(--green);margin-right:10px"></i>Novedades</a>
+    <a href="cafeterias.html"><i class="fa-solid fa-store" style="color:var(--green);margin-right:10px"></i>Cafeterías</a>
+    <a href="formacion.html"><i class="fa-solid fa-graduation-cap" style="color:var(--green);margin-right:10px"></i>Formación</a>
+    <a href="blog.html"><i class="fa-solid fa-newspaper" style="color:var(--green);margin-right:10px"></i>Blog</a>
+    <a href="contacto.html"><i class="fa-solid fa-envelope" style="color:var(--green);margin-right:10px"></i>Contacto</a>
+  </div>
+  <div class="mobile-cta"><a href="tel:3012705375" class="btn btn-primary"><i class="fa-solid fa-phone"></i>Llamar ahora</a></div>
+</nav>
+
+<header id="navbar">
+  <div class="container">
+    <nav class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="assets/img/logo-dxn.png" alt="DXN Nutrición Colombia" class="nav-logo-img">
+      </a>
+      <ul class="nav-links">
+        <li><a href="nosotros.html" style="color:var(--green)">Nosotros</a></li>
+        <li class="has-dropdown"><a href="productos.html">Productos <i class="fa-solid fa-chevron-down" style="font-size:.65rem"></i></a>
+          <div class="dropdown">
+            <a href="productos.html#suplementos"><i class="fa-solid fa-pills"></i>Suplementos Dietarios</a>
+            <a href="productos.html#cuidado"><i class="fa-solid fa-hand-sparkles"></i>Cuidado Personal</a>
+            <a href="productos.html#belleza"><i class="fa-solid fa-star"></i>Belleza</a>
+            <a href="productos.html#bebidas"><i class="fa-solid fa-mug-hot"></i>Alimentos y Bebidas</a>
+            <a href="productos.html#combos"><i class="fa-solid fa-box"></i>Combos Ganoderma</a>
+          </div>
+        </li>
+        <li><a href="novedades.html">Novedades</a></li>
+        <li><a href="cafeterias.html">Cafeterías</a></li>
+        <li><a href="formacion.html">Formación</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="tel:3012705375" class="phone"><i class="fa-solid fa-phone"></i> 301 270 5375</a>
+        <a href="contacto.html" class="btn btn-primary" style="padding:10px 22px;font-size:.875rem">Únete ahora</a>
+      </div>
+      <div class="hamburger" onclick="openMobileNav()"><span></span><span></span><span></span></div>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="page-hero">
+  <div class="page-hero-bg"></div><div class="page-hero-grid"></div>
+  <div class="container">
+    <div class="page-hero-content" data-aos="fade-up">
+      <div class="breadcrumb"><a href="index.html">Inicio</a><i class="fa-solid fa-chevron-right"></i><span>Nosotros</span></div>
+      <div class="section-tag" style="background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.2);color:rgba(255,255,255,.85)"><i class="fa-solid fa-circle-info"></i>Quiénes somos</div>
+      <h1>Más de 30 años llevando<br><span>bienestar natural</span> al mundo</h1>
+      <p>Conoce la historia, misión y valores de DXN — la empresa que convirtió el Ganoderma en un estilo de vida global presente en más de 180 países.</p>
+    </div>
+  </div>
+</section>
+
+<!-- HISTORIA -->
+<section style="padding:100px 0;background:var(--white)">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center">
+      <div data-aos="fade-right">
+        <div class="section-tag"><i class="fa-solid fa-clock-rotate-left"></i>Nuestra historia</div>
+        <h2 class="section-title">De Malasia al <span>mundo entero</span></h2>
+        <p class="section-sub" style="margin-bottom:40px">Una visión de un médico se convirtió en un movimiento global de bienestar natural.</p>
+        <div class="timeline">
+          <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">1993</div><div class="tl-title">Fundación de DXN</div><div class="tl-desc">El Dr. Lim Siow Jin funda DXN en Malasia con la misión de cultivar y distribuir Ganoderma de la más alta calidad para mejorar la salud de las personas.</div></div>
+          <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">1999</div><div class="tl-title">Expansión internacional</div><div class="tl-desc">DXN comienza su expansión global, llevando sus productos y modelo de negocio a docenas de países de Asia, Europa y América.</div></div>
+          <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">2005</div><div class="tl-title">Llegada a América Latina</div><div class="tl-desc">DXN establece presencia oficial en Colombia y otros países latinoamericanos, adaptando su oferta al mercado local con distribuidores autorizados.</div></div>
+          <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">2010</div><div class="tl-title">+50 países y +5M distribuidores</div><div class="tl-desc">Hito histórico para la compañía. DXN se consolida como líder mundial en productos de Ganoderma con millones de distribuidores activos.</div></div>
+          <div class="tl-item"><div class="tl-dot"></div><div class="tl-year">2024</div><div class="tl-title">+180 países · +9M distribuidores</div><div class="tl-desc">DXN es hoy una de las redes de bienestar natural más grandes del mundo, con presencia en más de 180 países y millones de vidas transformadas.</div></div>
+        </div>
+      </div>
+      <div data-aos="fade-left">
+        <div style="background:var(--gradient);border-radius:var(--radius-xl);padding:48px;color:white;margin-bottom:24px">
+          <div style="font-size:3rem;margin-bottom:16px">🍄</div>
+          <h3 style="font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:700;margin-bottom:12px">Dato' Dr. Lim Siow Jin</h3>
+          <p style="color:rgba(255,255,255,.8);line-height:1.8;font-size:.95rem">Fundador y CEO de DXN. Graduado en medicina del Instituto de Tecnología de Malasia, dedicó su vida a investigar los beneficios del Ganoderma y hacerlos accesibles para todas las personas del mundo.</p>
+          <p style="color:rgba(255,255,255,.8);line-height:1.8;font-size:.95rem;margin-top:12px">"Mi sueño es que cada persona en el mundo pueda acceder a los beneficios del Ganoderma para vivir una vida más saludable y plena."</p>
+          <p style="color:rgba(255,255,255,.5);font-size:.82rem;font-weight:700;margin-top:16px;letter-spacing:.08em">— Dr. Lim Siow Jin, Fundador DXN</p>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+          <div style="background:var(--gray-50);border:1px solid var(--gray-200);border-radius:var(--radius);padding:24px;text-align:center">
+            <div style="font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">+180</div>
+            <div style="font-size:.8rem;color:var(--gray-500);font-weight:600;margin-top:4px">Países</div>
+          </div>
+          <div style="background:var(--gray-50);border:1px solid var(--gray-200);border-radius:var(--radius);padding:24px;text-align:center">
+            <div style="font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">+9M</div>
+            <div style="font-size:.8rem;color:var(--gray-500);font-weight:600;margin-top:4px">Distribuidores</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-band">
+  <div class="container">
+    <div class="stats-row">
+      <div class="stat-item" data-aos="fade-up" data-aos-delay="0"><div class="stat-num">1993</div><div class="stat-label">Año de fundación</div></div>
+      <div class="stat-item" data-aos="fade-up" data-aos-delay="100"><div class="stat-num">+180</div><div class="stat-label">Países con presencia</div></div>
+      <div class="stat-item" data-aos="fade-up" data-aos-delay="200"><div class="stat-num">+9M</div><div class="stat-label">Distribuidores globales</div></div>
+      <div class="stat-item" data-aos="fade-up" data-aos-delay="300"><div class="stat-num">100%</div><div class="stat-label">Natural y certificado</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- MISIÓN VISIÓN VALORES -->
+<section style="padding:100px 0;background:var(--gray-50)">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:64px" data-aos="fade-up">
+      <div class="section-tag"><i class="fa-solid fa-bullseye"></i>ADN DXN</div>
+      <h2 class="section-title">Misión, Visión <span>y Valores</span></h2>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-bottom:64px">
+      <div style="background:var(--gradient);border-radius:var(--radius-xl);padding:48px;color:white;position:relative;overflow:hidden" data-aos="fade-right">
+        <div style="position:absolute;right:-10px;bottom:-10px;font-size:7rem;opacity:.08"><i class="fa-solid fa-rocket"></i></div>
+        <div style="position:relative;z-index:2">
+          <div style="width:56px;height:56px;background:rgba(255,255,255,.15);border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:1.4rem;margin-bottom:20px"><i class="fa-solid fa-rocket"></i></div>
+          <h3 style="font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:700;margin-bottom:16px">Misión</h3>
+          <p style="color:rgba(255,255,255,.85);line-height:1.8;font-size:.95rem">Promover el bienestar a través de productos naturales de alta calidad basados en Ganoderma, generando oportunidades de negocio accesibles para todas las personas, independientemente de su condición económica o social.</p>
+        </div>
+      </div>
+      <div style="background:var(--gray-900);border-radius:var(--radius-xl);padding:48px;color:white;position:relative;overflow:hidden;border:1px solid rgba(255,255,255,.08)" data-aos="fade-left">
+        <div style="position:absolute;right:-10px;bottom:-10px;font-size:7rem;opacity:.05"><i class="fa-solid fa-eye"></i></div>
+        <div style="position:relative;z-index:2">
+          <div style="width:56px;height:56px;background:rgba(30,158,62,.2);border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:1.4rem;margin-bottom:20px;color:var(--green-light)"><i class="fa-solid fa-eye"></i></div>
+          <h3 style="font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:700;margin-bottom:16px">Visión</h3>
+          <p style="color:rgba(255,255,255,.75);line-height:1.8;font-size:.95rem">Ser la empresa de bienestar natural número uno del mundo, llegando a cada rincón del planeta con productos que transforman vidas y una comunidad de distribuidores comprometidos con la salud y el éxito.</p>
+        </div>
+      </div>
+    </div>
+    <div class="values-grid">
+      <div class="value-card" data-aos="fade-up" data-aos-delay="0"><div class="value-icon"><i class="fa-solid fa-leaf"></i></div><h3>Naturaleza</h3><p>Creemos en el poder de lo natural. Cada producto DXN respeta los procesos de la naturaleza para ofrecerte lo mejor de la tierra.</p></div>
+      <div class="value-card" data-aos="fade-up" data-aos-delay="100"><div class="value-icon"><i class="fa-solid fa-handshake"></i></div><h3>Integridad</h3><p>Actuamos con honestidad y transparencia en cada relación con nuestros distribuidores, clientes y comunidad.</p></div>
+      <div class="value-card" data-aos="fade-up" data-aos-delay="200"><div class="value-icon"><i class="fa-solid fa-users"></i></div><h3>Comunidad</h3><p>Construimos una familia global unida por el bienestar. El éxito de cada miembro es el éxito de todos.</p></div>
+      <div class="value-card" data-aos="fade-up" data-aos-delay="0"><div class="value-icon"><i class="fa-solid fa-flask"></i></div><h3>Ciencia</h3><p>Respaldamos cada producto con investigación científica rigurosa. La eficacia no es un accidente, es el resultado de décadas de estudio.</p></div>
+      <div class="value-card" data-aos="fade-up" data-aos-delay="100"><div class="value-icon"><i class="fa-solid fa-chart-line"></i></div><h3>Crecimiento</h3><p>Fomentamos el desarrollo personal y profesional de cada distribuidor. Tu éxito es nuestra prioridad.</p></div>
+      <div class="value-card" data-aos="fade-up" data-aos-delay="200"><div class="value-icon"><i class="fa-solid fa-globe"></i></div><h3>Impacto Global</h3><p>Cada producto vendido contribuye a un mundo más saludable. Pequeñas acciones, grandes cambios.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- GANOTERAPIA -->
+<section id="ganoterapia" style="padding:100px 0;background:var(--white)">
+  <div class="container">
+    <div class="gano-feature" data-aos="fade-up">
+      <div class="gano-feature-bg"></div>
+      <div class="gano-feature-grid">
+        <div>
+          <div class="section-tag" style="background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.2);color:rgba(255,255,255,.85)"><i class="fa-solid fa-microscope"></i>Filosofía DXN</div>
+          <h2>¿Qué es la <span>Ganoterapia</span>?</h2>
+          <p>La Ganoterapia es la práctica de consumir Ganoderma de manera regular como parte de un estilo de vida saludable. No es una cura milagrosa, sino un complemento natural respaldado por miles de años de medicina oriental y cientos de estudios científicos modernos.</p>
+          <p>En DXN Colombia, guiamos a cada persona en su proceso de Ganoterapia, adaptando el consumo a sus necesidades específicas de salud y bienestar.</p>
+          <a href="productos.html" class="btn btn-primary" style="margin-top:8px"><i class="fa-solid fa-leaf"></i>Ver productos Ganoderma</a>
+        </div>
+        <div class="gano-props">
+          <div class="gano-prop"><i class="fa-solid fa-shield-halved"></i><span>Sistema Inmune</span></div>
+          <div class="gano-prop"><i class="fa-solid fa-heart-pulse"></i><span>Salud Cardiovascular</span></div>
+          <div class="gano-prop"><i class="fa-solid fa-moon"></i><span>Calidad del Sueño</span></div>
+          <div class="gano-prop"><i class="fa-solid fa-bolt"></i><span>Energía y Vitalidad</span></div>
+          <div class="gano-prop"><i class="fa-solid fa-brain"></i><span>Claridad Mental</span></div>
+          <div class="gano-prop"><i class="fa-solid fa-dna"></i><span>Propiedades Antioxidantes</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section style="padding:80px 0;background:var(--gray-50)">
+  <div class="container" style="text-align:center">
+    <div data-aos="fade-up">
+      <h2 class="section-title" style="margin-bottom:16px">¿Listo para ser parte de <span>DXN Colombia</span>?</h2>
+      <p class="section-sub" style="margin:0 auto 36px">Contáctanos y descubre cómo los productos DXN pueden transformar tu bienestar y tu economía.</p>
+      <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
+        <a href="contacto.html" class="btn btn-primary"><i class="fa-solid fa-envelope"></i>Contáctanos</a>
+        <a href="productos.html" class="btn btn-dark"><i class="fa-solid fa-leaf"></i>Ver productos</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo">
+          <div class="nav-logo-icon"><svg viewBox="0 0 32 32"><path d="M16 4c-2 0-4 1-5 3-1.5-.5-3-.2-4 1s-.8 3 0 4c-1.5 1-2 3-1 4.5s3 2 4.5 1c.5 2 2.5 3.5 4.5 3.5s4-1.5 4.5-3.5c1.5 1 3.5.5 4.5-1s.5-3.5-1-4.5c.8-1 .8-3 0-4s-2.5-1.5-4-1c-1-2-3-3-5-3z" opacity=".9"/><line x1="16" y1="21" x2="16" y2="28" stroke="white" stroke-width="2.5" stroke-linecap="round"/></svg></div>
+          <div class="nav-logo-text"><span class="dxn" style="color:rgba(255,255,255,.4)">DXN</span><span class="nutricion">NUTRICIÓN</span></div>
+        </a>
+        <p>Distribuidores oficiales DXN en Colombia. Llevando el poder del Ganoderma a tu vida desde Bogotá.</p>
+        <div class="social-links">
+          <a href="#" class="social-link"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" class="social-link"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" class="social-link"><i class="fa-brands fa-youtube"></i></a>
+          <a href="https://wa.me/573012705375" target="_blank" class="social-link"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div class="footer-col"><h4>Productos</h4><ul>
+        <li><a href="productos.html#suplementos"><i class="fa-solid fa-chevron-right"></i>Suplementos</a></li>
+        <li><a href="productos.html#cuidado"><i class="fa-solid fa-chevron-right"></i>Cuidado Personal</a></li>
+        <li><a href="productos.html#belleza"><i class="fa-solid fa-chevron-right"></i>Belleza</a></li>
+        <li><a href="productos.html#bebidas"><i class="fa-solid fa-chevron-right"></i>Alimentos y Bebidas</a></li>
+        <li><a href="novedades.html"><i class="fa-solid fa-chevron-right"></i>Novedades</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>Empresa</h4><ul>
+        <li><a href="nosotros.html"><i class="fa-solid fa-chevron-right"></i>Nosotros</a></li>
+        <li><a href="cafeterias.html"><i class="fa-solid fa-chevron-right"></i>Cafeterías</a></li>
+        <li><a href="formacion.html"><i class="fa-solid fa-chevron-right"></i>Formación</a></li>
+        <li><a href="blog.html"><i class="fa-solid fa-chevron-right"></i>Blog</a></li>
+        <li><a href="contacto.html"><i class="fa-solid fa-chevron-right"></i>Contacto</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>Contacto</h4><ul>
+        <li><a href="tel:3012705375"><i class="fa-solid fa-phone"></i>301 270 5375</a></li>
+        <li><a href="tel:3156916984"><i class="fa-solid fa-phone"></i>315 691 6984</a></li>
+        <li><a href="mailto:ventas@dxnnutricion.com.co"><i class="fa-solid fa-envelope"></i>ventas@dxnnutricion.com.co</a></li>
+        <li><a href="#"><i class="fa-solid fa-location-dot"></i>Cll 75 #68G-70, Bogotá</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 DXN Nutrición Colombia. Todos los derechos reservados.</p>
+      <p>Distribuidor autorizado <a href="https://www.dxn2u.com" target="_blank">DXN Internacional</a></p>
+    </div>
+  </div>
+</footer>
+
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({duration:700,once:true,offset:60});
+  const navbar=document.getElementById('navbar');
+  window.addEventListener('scroll',()=>navbar.classList.toggle('scrolled',window.scrollY>40));
+  function openMobileNav(){document.getElementById('mobile-nav').classList.add('open');document.getElementById('mobile-overlay').classList.add('open');document.body.style.overflow='hidden';}
+  function closeMobileNav(){document.getElementById('mobile-nav').classList.remove('open');document.getElementById('mobile-overlay').classList.remove('open');document.body.style.overflow='';}
+</script>
+<script src="assets/js/chat.js"></script>
+</body>
+</html>
