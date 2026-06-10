@@ -127,8 +127,15 @@
   /* ── Badge ── */
   function updateBadge() {
     const total = cart.reduce((a, b) => a + b.qty, 0);
+    // Badge flotante
     countEl.textContent = total > 9 ? '9+' : total;
     countEl.classList.toggle('visible', total > 0);
+    // Badge en navbar
+    const navCount = document.getElementById('nav-cart-count');
+    if (navCount) {
+      navCount.textContent = total > 9 ? '9+' : total;
+      navCount.classList.toggle('visible', total > 0);
+    }
   }
 
   /* ── Save ── */

@@ -483,11 +483,11 @@
     #promo-ticker:hover .ticker-track { animation-play-state: paused; }
 
     /* ===== HERO SLIDER ===== */
-    #hero { padding: 0; min-height: unset; background: none; }
+    #hero { padding: 0; min-height: unset; background: none; margin-top: 64px; }
     .hero-swiper { width: 100%; }
     .hero-slide {
       width: 100%;
-      min-height: 92vh;
+      min-height: 88vh;
       background-size: cover;
       background-position: center top;
       background-repeat: no-repeat;
@@ -1231,6 +1231,7 @@
 
       <div class="nav-cta">
         <a href="tel:3012705375" class="phone"><i class="fa-solid fa-phone"></i> 301 270 5375</a>
+        <button class="nav-cart-btn" onclick="toggleCart()" title="Mi pedido DXN"><i class="fa-solid fa-cart-shopping"></i><span class="nav-cart-count" id="nav-cart-count"></span></button>
         <a href="contacto.html" class="btn btn-primary" style="padding:10px 22px;font-size:.875rem">Únete ahora</a>
       </div>
 
@@ -1404,10 +1405,7 @@
           <div class="product-category">Suplemento Dietario</div>
           <div class="product-name">Reishi Gano DXN</div>
           <div class="product-desc">Cápsulas de Ganoderma Lucidum puro. El suplemento estrella para sistema inmune y vitalidad.</div>
-          <div class="product-footer">
-            <a href="productos.html#reishi" class="product-link">Ver detalle <i class="fa-solid fa-arrow-right"></i></a>
-            <div class="product-icon-btn"><i class="fa-solid fa-plus"></i></div>
-          </div>
+          <div class="product-footer-double"><button class="add-to-cart-btn" onclick=""><i class="fa-solid fa-cart-plus"></i> Agregar</button><a href="https://wa.me/573223153360" target="_blank" class="product-wa-btn"><i class="fa-brands fa-whatsapp"></i> Consultar</a></div>
         </div>
       </div>
 
@@ -1419,10 +1417,7 @@
           <div class="product-category">Suplemento Dietario</div>
           <div class="product-name">Spirulina DXN</div>
           <div class="product-desc">Alga verde-azul rica en proteínas, vitaminas y minerales esenciales para el organismo.</div>
-          <div class="product-footer">
-            <a href="productos.html#spirulina" class="product-link">Ver detalle <i class="fa-solid fa-arrow-right"></i></a>
-            <div class="product-icon-btn"><i class="fa-solid fa-plus"></i></div>
-          </div>
+          <div class="product-footer-double"><button class="add-to-cart-btn" onclick=""><i class="fa-solid fa-cart-plus"></i> Agregar</button><a href="https://wa.me/573223153360" target="_blank" class="product-wa-btn"><i class="fa-brands fa-whatsapp"></i> Consultar</a></div>
         </div>
       </div>
 
@@ -1435,10 +1430,7 @@
           <div class="product-category">Alimentos y Bebidas</div>
           <div class="product-name">Lingzhi Café Negro DXN</div>
           <div class="product-desc">El café que cuida tu salud. Mezcla única de café arábica con extracto de Ganoderma.</div>
-          <div class="product-footer">
-            <a href="productos.html#cafe" class="product-link">Ver detalle <i class="fa-solid fa-arrow-right"></i></a>
-            <div class="product-icon-btn"><i class="fa-solid fa-plus"></i></div>
-          </div>
+          <div class="product-footer-double"><button class="add-to-cart-btn" onclick=""><i class="fa-solid fa-cart-plus"></i> Agregar</button><a href="https://wa.me/573223153360" target="_blank" class="product-wa-btn"><i class="fa-brands fa-whatsapp"></i> Consultar</a></div>
         </div>
       </div>
 
@@ -1450,10 +1442,7 @@
           <div class="product-category">Cuidado Personal</div>
           <div class="product-name">Ganozhi Jabón DXN</div>
           <div class="product-desc">Jabón natural con Ganoderma para una limpieza profunda y suave. Ideal para todo tipo de piel.</div>
-          <div class="product-footer">
-            <a href="productos.html#cuidado" class="product-link">Ver detalle <i class="fa-solid fa-arrow-right"></i></a>
-            <div class="product-icon-btn"><i class="fa-solid fa-plus"></i></div>
-          </div>
+          <div class="product-footer-double"><button class="add-to-cart-btn" onclick=""><i class="fa-solid fa-cart-plus"></i> Agregar</button><a href="https://wa.me/573223153360" target="_blank" class="product-wa-btn"><i class="fa-brands fa-whatsapp"></i> Consultar</a></div>
         </div>
       </div>
 
@@ -1465,10 +1454,7 @@
           <div class="product-category">Alimentos y Bebidas</div>
           <div class="product-name">Zhi Mocha DXN</div>
           <div class="product-desc">Deliciosa mezcla de café, cacao y Ganoderma. Placer y bienestar en cada taza.</div>
-          <div class="product-footer">
-            <a href="productos.html#mocha" class="product-link">Ver detalle <i class="fa-solid fa-arrow-right"></i></a>
-            <div class="product-icon-btn"><i class="fa-solid fa-plus"></i></div>
-          </div>
+          <div class="product-footer-double"><button class="add-to-cart-btn" onclick=""><i class="fa-solid fa-cart-plus"></i> Agregar</button><a href="https://wa.me/573223153360" target="_blank" class="product-wa-btn"><i class="fa-brands fa-whatsapp"></i> Consultar</a></div>
         </div>
       </div>
 
@@ -1480,10 +1466,7 @@
           <div class="product-category">Suplemento Dietario</div>
           <div class="product-name">Ganocelium DXN</div>
           <div class="product-desc">Micelio de Ganoderma de 18 días. Fuente concentrada de polisacáridos para la inmunidad.</div>
-          <div class="product-footer">
-            <a href="productos.html#ganocelium" class="product-link">Ver detalle <i class="fa-solid fa-arrow-right"></i></a>
-            <div class="product-icon-btn"><i class="fa-solid fa-plus"></i></div>
-          </div>
+          <div class="product-footer-double"><button class="add-to-cart-btn" onclick=""><i class="fa-solid fa-cart-plus"></i> Agregar</button><a href="https://wa.me/573223153360" target="_blank" class="product-wa-btn"><i class="fa-brands fa-whatsapp"></i> Consultar</a></div>
         </div>
       </div>
 
@@ -1495,10 +1478,7 @@
           <div class="product-category">Cuidado Personal</div>
           <div class="product-name">Ganozhi Pasta Dental</div>
           <div class="product-desc">Pasta dental con Ganoderma para encías sanas, blanqueamiento natural y aliento fresco.</div>
-          <div class="product-footer">
-            <a href="productos.html#pasta" class="product-link">Ver detalle <i class="fa-solid fa-arrow-right"></i></a>
-            <div class="product-icon-btn"><i class="fa-solid fa-plus"></i></div>
-          </div>
+          <div class="product-footer-double"><button class="add-to-cart-btn" onclick=""><i class="fa-solid fa-cart-plus"></i> Agregar</button><a href="https://wa.me/573223153360" target="_blank" class="product-wa-btn"><i class="fa-brands fa-whatsapp"></i> Consultar</a></div>
         </div>
       </div>
 
@@ -1511,10 +1491,7 @@
           <div class="product-category">Belleza</div>
           <div class="product-name">Ganozhi Labial DXN</div>
           <div class="product-desc">Labial nutritivo con extracto de Ganoderma. Hidratación profunda y color natural.</div>
-          <div class="product-footer">
-            <a href="productos.html#labial" class="product-link">Ver detalle <i class="fa-solid fa-arrow-right"></i></a>
-            <div class="product-icon-btn"><i class="fa-solid fa-plus"></i></div>
-          </div>
+          <div class="product-footer-double"><button class="add-to-cart-btn" onclick=""><i class="fa-solid fa-cart-plus"></i> Agregar</button><a href="https://wa.me/573223153360" target="_blank" class="product-wa-btn"><i class="fa-brands fa-whatsapp"></i> Consultar</a></div>
         </div>
       </div>
 

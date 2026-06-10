@@ -156,6 +156,11 @@
 }
 .cart-clear-btn:hover { color: #EF4444; }
 
+/* Doble botón en tarjetas */
+.product-footer-double { display:flex; gap:8px; padding-top:4px; }
+.product-wa-btn { display:inline-flex; align-items:center; gap:5px; padding:8px 14px; background:#25D366; color:white; border-radius:100px; font-size:.78rem; font-weight:700; text-decoration:none; transition:all .2s; white-space:nowrap; }
+.product-wa-btn:hover { background:#128C7E; transform:scale(1.03); }
+
 /* Botón "Agregar" en productos */
 .add-to-cart-btn {
   display: inline-flex; align-items: center; gap: 6px;
