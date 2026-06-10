@@ -32,6 +32,7 @@
     @media(max-width:768px){ .novedad-featured{grid-template-columns:1fr;} .novedad-featured:nth-child(even){direction:ltr;} }
   </style>
 <link rel="stylesheet" href="assets/css/chat.css" />
+<link rel="stylesheet" href="assets/css/cart.css" />
 </head>
 <body>
 <div id="mobile-overlay" onclick="closeMobileNav()"></div>
@@ -181,5 +182,6 @@
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 <script>AOS.init({duration:700,once:true,offset:60});const navbar=document.getElementById('navbar');window.addEventListener('scroll',()=>navbar.classList.toggle('scrolled',window.scrollY>40));function openMobileNav(){document.getElementById('mobile-nav').classList.add('open');document.getElementById('mobile-overlay').classList.add('open');document.body.style.overflow='hidden';}function closeMobileNav(){document.getElementById('mobile-nav').classList.remove('open');document.getElementById('mobile-overlay').classList.remove('open');document.body.style.overflow='';}</script>
 <script src="assets/js/chat.js"></script>
+<script src="assets/js/cart.js"></script>
 </body>
 </html>
