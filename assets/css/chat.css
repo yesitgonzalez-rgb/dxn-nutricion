@@ -1,4 +1,4 @@
-/* ===== DXN CHAT WIDGET ===== */
+﻿/* ===== DXN CHAT WIDGET ===== */
 #dxn-chat-btn {
   position: fixed;
   bottom: 28px;
@@ -6,7 +6,7 @@
   width: 62px;
   height: 62px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #1B3A8C, #1E9E3E);
+  background: var(--green);
   border: none;
   cursor: pointer;
   display: flex;
@@ -65,7 +65,7 @@
 
 /* Header */
 .chat-header {
-  background: linear-gradient(135deg, #1B3A8C 0%, #1E9E3E 100%);
+  background: var(--green);
   padding: 18px 20px;
   display: flex;
   align-items: center;
@@ -128,7 +128,7 @@
   align-self: flex-start;
 }
 .chat-bubble.user {
-  background: linear-gradient(135deg, #1B3A8C, #1E9E3E);
+  background: var(--green);
   color: white;
   border-bottom-right-radius: 4px;
   align-self: flex-end;
@@ -225,7 +225,7 @@
 .chat-send {
   width: 38px; height: 38px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #1B3A8C, #1E9E3E);
+  background: var(--green);
   border: none;
   cursor: pointer;
   display: flex; align-items: center; justify-content: center;

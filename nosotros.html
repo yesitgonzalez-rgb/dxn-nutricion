@@ -12,9 +12,9 @@
   <style>
     /* timeline */
     .timeline { position:relative; padding-left:40px; }
-    .timeline::before { content:''; position:absolute; left:16px; top:0; bottom:0; width:2px; background:var(--gradient); }
+    .timeline::before { content:''; position:absolute; left:16px; top:0; bottom:0; width:2px; background: var(--green); }
     .tl-item { position:relative; margin-bottom:48px; }
-    .tl-dot { position:absolute; left:-32px; top:4px; width:16px; height:16px; border-radius:50%; background:var(--gradient); border:3px solid var(--white); box-shadow:0 0 0 3px rgba(30,158,62,.3); }
+    .tl-dot { position:absolute; left:-32px; top:4px; width:16px; height:16px; border-radius:50%; background: var(--green); border:3px solid var(--white); box-shadow:0 0 0 3px rgba(30,158,62,.3); }
     .tl-year { font-size:.75rem; font-weight:800; color:var(--green); letter-spacing:.1em; text-transform:uppercase; margin-bottom:6px; }
     .tl-title { font-size:1.1rem; font-weight:700; color:var(--gray-900); margin-bottom:6px; }
     .tl-desc { font-size:.9rem; color:var(--gray-500); line-height:1.7; }
@@ -22,21 +22,21 @@
     .values-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
     .value-card { padding:36px 28px; border-radius:var(--radius-xl); background:var(--gray-50); border:1px solid var(--gray-200); text-align:center; transition:var(--transition); }
     .value-card:hover { border-color:var(--green); transform:translateY(-6px); box-shadow:var(--shadow-lg); }
-    .value-icon { width:64px; height:64px; background:var(--gradient); border-radius:18px; display:flex; align-items:center; justify-content:center; font-size:1.6rem; color:white; margin:0 auto 20px; }
+    .value-icon { width:64px; height:64px; background: var(--green); border-radius:18px; display:flex; align-items:center; justify-content:center; font-size:1.6rem; color:white; margin:0 auto 20px; }
     .value-card h3 { font-size:1.1rem; font-weight:700; color:var(--gray-900); margin-bottom:10px; }
     .value-card p { font-size:.875rem; color:var(--gray-500); line-height:1.7; }
     /* team */
     .team-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(240px,1fr)); gap:28px; }
     .team-card { background:var(--white); border-radius:var(--radius-xl); overflow:hidden; border:1px solid var(--gray-200); transition:var(--transition); }
     .team-card:hover { transform:translateY(-6px); box-shadow:var(--shadow-lg); }
-    .team-photo { height:220px; background:var(--gradient); display:flex; align-items:center; justify-content:center; font-size:4rem; color:white; }
+    .team-photo { height:220px; background: var(--green); display:flex; align-items:center; justify-content:center; font-size:4rem; color:white; }
     .team-info { padding:24px; }
     .team-name { font-size:1.05rem; font-weight:700; color:var(--gray-900); }
     .team-role { font-size:.82rem; color:var(--green); font-weight:600; margin:4px 0 10px; }
     .team-desc { font-size:.85rem; color:var(--gray-500); line-height:1.6; }
     /* ganoterapia */
     .gano-feature { background:var(--gray-900); border-radius:var(--radius-xl); padding:60px; position:relative; overflow:hidden; }
-    .gano-feature-bg { position:absolute; inset:0; background:var(--gradient); opacity:.12; }
+    .gano-feature-bg { position:absolute; inset:0; background: var(--green); opacity:.12; }
     .gano-feature-grid { position:relative; z-index:2; display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:center; }
     .gano-feature h2 { font-family:'Playfair Display',serif; font-size:2.4rem; font-weight:700; color:white; margin-bottom:16px; }
     .gano-feature h2 span { background:linear-gradient(135deg,#6EE89B,#A8D8F0); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
@@ -46,7 +46,7 @@
     .gano-prop i { font-size:1.4rem; color:var(--green-light); margin-bottom:8px; }
     .gano-prop span { display:block; font-size:.82rem; font-weight:600; color:rgba(255,255,255,.8); }
     /* stats band */
-    .stats-band { background:var(--gradient); padding:64px 0; }
+    .stats-band { background: var(--green); padding:64px 0; }
     .stats-row { display:grid; grid-template-columns:repeat(4,1fr); gap:32px; }
     .stat-item { text-align:center; }
     .stat-num { font-family:'Playfair Display',serif; font-size:2.8rem; font-weight:700; color:white; line-height:1; }
@@ -142,7 +142,7 @@
         </div>
       </div>
       <div data-aos="fade-left">
-        <div style="background:var(--gradient);border-radius:var(--radius-xl);padding:48px;color:white;margin-bottom:24px">
+        <div style="background: var(--green);border-radius:var(--radius-xl);padding:48px;color:white;margin-bottom:24px">
           <div style="font-size:3rem;margin-bottom:16px">🍄</div>
           <h3 style="font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:700;margin-bottom:12px">Dato' Dr. Lim Siow Jin</h3>
           <p style="color:rgba(255,255,255,.8);line-height:1.8;font-size:.95rem">Fundador y CEO de DXN. Graduado en medicina del Instituto de Tecnología de Malasia, dedicó su vida a investigar los beneficios del Ganoderma y hacerlos accesibles para todas las personas del mundo.</p>
@@ -151,11 +151,11 @@
         </div>
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
           <div style="background:var(--gray-50);border:1px solid var(--gray-200);border-radius:var(--radius);padding:24px;text-align:center">
-            <div style="font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">+180</div>
+            <div style="font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;background: var(--green);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">+180</div>
             <div style="font-size:.8rem;color:var(--gray-500);font-weight:600;margin-top:4px">Países</div>
           </div>
           <div style="background:var(--gray-50);border:1px solid var(--gray-200);border-radius:var(--radius);padding:24px;text-align:center">
-            <div style="font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">+9M</div>
+            <div style="font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;background: var(--green);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">+9M</div>
             <div style="font-size:.8rem;color:var(--gray-500);font-weight:600;margin-top:4px">Distribuidores</div>
           </div>
         </div>
@@ -184,7 +184,7 @@
       <h2 class="section-title">Misión, Visión <span>y Valores</span></h2>
     </div>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-bottom:64px">
-      <div style="background:var(--gradient);border-radius:var(--radius-xl);padding:48px;color:white;position:relative;overflow:hidden" data-aos="fade-right">
+      <div style="background: var(--green);border-radius:var(--radius-xl);padding:48px;color:white;position:relative;overflow:hidden" data-aos="fade-right">
         <div style="position:absolute;right:-10px;bottom:-10px;font-size:7rem;opacity:.08"><i class="fa-solid fa-rocket"></i></div>
         <div style="position:relative;z-index:2">
           <div style="width:56px;height:56px;background:rgba(255,255,255,.15);border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:1.4rem;margin-bottom:20px"><i class="fa-solid fa-rocket"></i></div>
