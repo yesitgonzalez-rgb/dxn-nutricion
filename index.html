@@ -450,6 +450,121 @@
       overflow: hidden;
     }
     .nav-logo-img { height: 52px; width: auto; object-fit: contain; }
+
+    /* ===== TICKER ===== */
+    #promo-ticker {
+      background: var(--blue);
+      padding: 10px 0;
+      overflow: hidden;
+      white-space: nowrap;
+      position: relative;
+      z-index: 999;
+    }
+    .ticker-track {
+      display: inline-flex;
+      gap: 60px;
+      animation: ticker-scroll 35s linear infinite;
+    }
+    .ticker-track span {
+      font-size: .82rem;
+      font-weight: 600;
+      color: rgba(255,255,255,.9);
+      letter-spacing: .04em;
+    }
+    .ticker-track span::after {
+      content: '·';
+      margin-left: 60px;
+      color: var(--green);
+    }
+    @keyframes ticker-scroll {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    #promo-ticker:hover .ticker-track { animation-play-state: paused; }
+
+    /* ===== HERO SLIDER ===== */
+    #hero { padding: 0; min-height: unset; background: none; }
+    .hero-swiper { width: 100%; }
+    .hero-slide {
+      width: 100%;
+      min-height: 92vh;
+      background-size: cover;
+      background-position: center top;
+      background-repeat: no-repeat;
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+    .hero-slide-overlay {
+      position: absolute; inset: 0;
+      background: rgba(5,20,60,.5);
+    }
+    .hero-slide-content {
+      position: relative; z-index: 2;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 40px;
+      padding-top: 80px;
+    }
+    .hero-slide-tag {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--green);
+      color: white;
+      font-size: .78rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
+      padding: 7px 18px; border-radius: 100px;
+      margin-bottom: 24px;
+    }
+    .hero-slide-content h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.4rem, 5.5vw, 4.2rem);
+      font-weight: 800;
+      color: white;
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+    .hero-slide-content h1 span {
+      color: var(--green);
+    }
+    .hero-slide-content p {
+      font-size: 1.1rem;
+      color: rgba(255,255,255,.85);
+      max-width: 540px;
+      line-height: 1.7;
+      margin-bottom: 36px;
+    }
+    .hero-slide-btns { display: flex; flex-wrap: wrap; gap: 16px; }
+    .btn-outline-white {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 14px 32px; border-radius: 100px;
+      font-size: .95rem; font-weight: 600;
+      background: transparent;
+      color: white;
+      border: 2px solid rgba(255,255,255,.6);
+      transition: var(--transition);
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .btn-outline-white:hover { background: rgba(255,255,255,.15); border-color: white; }
+    /* Swiper custom */
+    .hero-next, .hero-prev {
+      width: 48px !important; height: 48px !important;
+      background: rgba(255,255,255,.15) !important;
+      backdrop-filter: blur(8px);
+      border-radius: 50% !important;
+      border: 2px solid rgba(255,255,255,.3) !important;
+      color: white !important;
+      transition: var(--transition) !important;
+    }
+    .hero-next:hover, .hero-prev:hover { background: var(--green) !important; border-color: var(--green) !important; }
+    .hero-next::after, .hero-prev::after { font-size: 1rem !important; font-weight: 700 !important; color: white !important; }
+    .hero-pagination .swiper-pagination-bullet { background: rgba(255,255,255,.5) !important; width: 10px !important; height: 10px !important; }
+    .hero-pagination .swiper-pagination-bullet-active { background: var(--green) !important; width: 28px !important; border-radius: 5px !important; }
+    @media(max-width:768px){
+      .hero-slide { min-height: 60vh; background-position: center center; }
+      .hero-slide-content { padding: 0 20px; padding-top: 70px; }
+      .hero-slide-btns { flex-direction: column; }
+      .hero-slide-btns .btn, .hero-slide-btns .btn-outline-white { justify-content: center; }
+    }
     .product-img-bg {
       position: absolute; inset: 0;
       display: flex; align-items: center; justify-content: center;
@@ -1125,72 +1240,67 @@
   </div>
 </header>
 
-<!-- ===== HERO ===== -->
+<!-- ===== TICKER ===== -->
+<div id="promo-ticker">
+  <div class="ticker-track">
+    <span>🍄 Distribuidores Oficiales DXN Colombia</span>
+    <span>⚽ ¡Gano por el Mundo! Especial Mundial 2026</span>
+    <span>🛵 Envío a todo Colombia</span>
+    <span>🌿 Productos 100% Naturales y Certificados</span>
+    <span>🏆 +9 Millones de distribuidores en +180 países</span>
+    <span>☕ Lingzhi Café · Reishi Gano · Spirulina DXN</span>
+    <span>🍄 Distribuidores Oficiales DXN Colombia</span>
+    <span>⚽ ¡Gano por el Mundo! Especial Mundial 2026</span>
+    <span>🛵 Envío a todo Colombia</span>
+    <span>🌿 Productos 100% Naturales y Certificados</span>
+    <span>🏆 +9 Millones de distribuidores en +180 países</span>
+    <span>☕ Lingzhi Café · Reishi Gano · Spirulina DXN</span>
+  </div>
+</div>
+
+<!-- ===== HERO SLIDER ===== -->
 <section id="hero">
-  <div class="hero-particles"></div>
-  <div class="hero-grid"></div>
-  <div class="hero-blob hero-blob-1"></div>
-  <div class="hero-blob hero-blob-2"></div>
-  <div class="hero-bg"></div>
+  <div class="swiper hero-swiper">
+    <div class="swiper-wrapper">
 
-  <div class="container" style="width:100%">
-    <div class="hero-content" data-aos="fade-up">
-      <div class="hero-badge">
-        <span class="dot"></span>
-        Distribuidores Oficiales DXN Colombia
-      </div>
-      <h1 class="hero-title">
-        Bienestar Natural<br>
-        con el Poder del<br>
-        <span class="accent">Ganoderma</span>
-      </h1>
-      <p class="hero-desc">
-        Descubre la ciencia detrás del hongo más poderoso del mundo. Productos naturales certificados para tu salud, belleza y bienestar — respaldados por 30 años de investigación.
-      </p>
-      <div class="hero-actions">
-        <a href="productos.html" class="btn btn-primary">
-          <i class="fa-solid fa-leaf"></i> Ver Productos
-        </a>
-        <a href="#oportunidad" class="btn btn-outline">
-          <i class="fa-solid fa-rocket"></i> Únete al equipo
-        </a>
-      </div>
-      <div class="hero-stats">
-        <div class="hero-stat">
-          <div class="num">+180</div>
-          <div class="label">Países presentes</div>
-        </div>
-        <div class="hero-stat">
-          <div class="num">30+</div>
-          <div class="label">Años de experiencia</div>
-        </div>
-        <div class="hero-stat">
-          <div class="num">100%</div>
-          <div class="label">Natural y certificado</div>
+      <!-- Slide 1: Gano Mundial -->
+      <div class="swiper-slide">
+        <div class="hero-slide" style="background-image:url('assets/img/slider-1.png')">
+          <div class="hero-slide-overlay"></div>
+          <div class="hero-slide-content" data-aos="fade-up">
+            <span class="hero-slide-tag">⚽ Especial Mundial 2026</span>
+            <h1>¡<span>Gano</span> por el Mundo!</h1>
+            <p>Con DXN Nutrición celebra el Mundial desde cualquier lugar. Energía, inmunidad y bienestar para toda Colombia. 🇨🇴</p>
+            <div class="hero-slide-btns">
+              <a href="productos.html" class="btn btn-primary"><i class="fa-solid fa-leaf"></i> Ver Productos</a>
+              <a href="#contacto" class="btn btn-outline-white"><i class="fa-brands fa-whatsapp"></i> Escribir ahora</a>
+            </div>
+          </div>
         </div>
       </div>
+
+      <!-- Slide 2: Envío / Delivery -->
+      <div class="swiper-slide">
+        <div class="hero-slide" style="background-image:url('assets/img/slider-2.png')">
+          <div class="hero-slide-overlay" style="background:rgba(10,40,90,.45)"></div>
+          <div class="hero-slide-content" data-aos="fade-up">
+            <span class="hero-slide-tag">🛵 Envío rápido</span>
+            <h1>Tu pedido <span>DXN</span><br>a domicilio</h1>
+            <p>Reishi Gano, Spirulina, Ganocelium y más productos naturales entregados directo en tu puerta en todo Colombia.</p>
+            <div class="hero-slide-btns">
+              <a href="productos.html" class="btn btn-primary"><i class="fa-solid fa-bag-shopping"></i> Hacer pedido</a>
+              <a href="nosotros.html" class="btn btn-outline-white"><i class="fa-solid fa-circle-info"></i> Conocer más</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
-  </div>
-
-  <!-- Floating card -->
-  <div class="hero-visual">
-    <div class="hero-card-float" data-aos="fade-left" data-aos-delay="300">
-      <div class="card-icon">🍄</div>
-      <h3>Ganoderma Lucidum</h3>
-      <p>El "hongo de la inmortalidad" utilizado en la medicina tradicional oriental por más de 4.000 años.</p>
-      <div class="hero-card-products">
-        <span>Reishi Gano</span>
-        <span>Ganocelium</span>
-        <span>Café Ganoderma</span>
-        <span>Spirulina</span>
-        <span>Cuidado Personal</span>
-      </div>
-    </div>
-  </div>
-
-  <div class="scroll-indicator">
-    <span>Explorar</span>
-    <div class="arrow"><i class="fa-solid fa-chevron-down"></i></div>
+    <!-- Navigation -->
+    <div class="swiper-button-next hero-next"></div>
+    <div class="swiper-button-prev hero-prev"></div>
+    <!-- Pagination -->
+    <div class="swiper-pagination hero-pagination"></div>
   </div>
 </section>
 
@@ -1931,6 +2041,17 @@
         }
       });
     });
+  });
+
+  // Hero Slider
+  new Swiper('.hero-swiper', {
+    loop: true,
+    autoplay: { delay: 5000, disableOnInteraction: false, pauseOnMouseEnter: true },
+    speed: 800,
+    effect: 'fade',
+    fadeEffect: { crossFade: true },
+    navigation: { nextEl: '.hero-next', prevEl: '.hero-prev' },
+    pagination: { el: '.hero-pagination', clickable: true },
   });
 
   // Testimonials Swiper
