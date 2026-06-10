@@ -1,7 +1,7 @@
 ﻿/* ===== DXN NUTRICIÓN — CHAT WIDGET ===== */
 (function () {
 
-  const WA_NUMBER = '573012705375';
+  const WA_NUMBER = '573223153360';
   const WA_BASE   = `https://wa.me/${WA_NUMBER}?text=`;
 
   /* ── Saludo según hora ── */
